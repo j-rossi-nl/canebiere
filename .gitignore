@@ -1,4 +1,8 @@
-*.csv
 .idea/
 .ipynb_checkpoints/
 __pycache__
+/scraper/canebiere.jsonl
+/scraper/canebiere.csv
+/canebiere.pickle
+**/*.png
+.vscode/
