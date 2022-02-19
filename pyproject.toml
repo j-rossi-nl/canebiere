@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "canebiere"
+version = "0.1.0"
+description = ""
+authors = ["Julien Rossi <mr.julien.rossi@gmail.com>"]
+license = "Free"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fr-core-news-sm = {url = "https://github.com/explosion/spacy-models/releases/download/fr_core_news_sm-3.2.0/fr_core_news_sm-3.2.0-py3-none-any.whl"}
+
+[tool.poetry.dev-dependencies]
+jupyterlab = "^3.2.9"
+jupyter-contrib-nbextensions = "^0.5.1"
+Scrapy = "^2.5.1"
+pandas = "^1.4.1"
+tqdm = "^4.62.3"
+matplotlib = "^3.5.1"
+seaborn = "^0.11.2"
+altair = "^4.2.0"
+spacy = "^3.2.2"
+beautifulsoup4 = "^4.10.0"
+wordcloud = "^1.8.1"
+frenchleffflemmatizer = {git = "https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer.git"}
+gensim = "^4.1.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
