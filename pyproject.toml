@@ -21,8 +21,10 @@ beautifulsoup4 = "^4.10.0"
 wordcloud = "^1.8.1"
 frenchleffflemmatizer = {git = "https://github.com/ClaudeCoulombe/FrenchLefffLemmatizer.git"}
 gensim = "^4.1.2"
+scrapy-deltafetch = "^2.0.1"
 
 [tool.poetry.dev-dependencies]
+pylint = "^2.12.2"
 
 
 [build-system]

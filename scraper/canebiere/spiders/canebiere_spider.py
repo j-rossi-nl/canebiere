@@ -9,8 +9,8 @@ import re
 
 class CanebiereSpider(Spider):
 	name = 'canebiere_spider'
-	allowed_urls = ['https://horsjeu.net/']
-	root_url = 'https://horsjeu.net/category/france/lelite/la-canebiere-academie/'
+	allowed_urls = ['https://horsjeu.org/']
+	root_url = 'https://horsjeu.org/category/france/lelite/la-canebiere-academie/'
 	start_urls = [root_url]
 
 	custom_settings = {
