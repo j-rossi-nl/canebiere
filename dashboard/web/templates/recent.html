@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+{% block script %}
+<!-- 
+put your custom script or styling here
+
+-->
+{% endblock script %}
+
+
+{% block my_content %}
+<!-- Confirmed, Recovered, Deaths Card -->
+<div class="row">
+    <div class="col-sm">
+        <!-- small box -->
+        <div class="small-box" style="background-color: white;">
+            <div class="inner">
+                <h3>L'Équipe</h3>
+                <p>Notes des 5 derniers matchs</p>
+            </div>
+            <div id="notes-match" style="width: 100%; height: 400px;"></div>
+            <div class="inner">
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-sm">
+        <!-- small box -->
+        <div class="small-box", style="background-color: white;">
+            <div class="inner">
+                <h3>Les Joueurs</h3>
+                <p>Notes des 5 derniers matchs</p>
+            </div>
+            <div id="notes-player" style="width: 100%; height: 400px;"></div>
+            <div class="inner">
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <!-- ./col -->
+    <div class="col-sm">
+        <!-- small box -->
+        <div class="small-box" style="background-color: white;">
+            <div class="inner">
+                <h3>Les Joueurs</h3>
+                <p>Nombre d'apparitions sur les 5 derniers matchs</p>
+            </div>
+            <div id="player-matchs" style="width: 100%; height: 400px;"></div>
+            <div class="inner">
+                <p>&nbsp;</p>
+            </div>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+<!-- Altair plot placeholder -->
+<div class="row">
+    <div class="col-sm">
+        <!-- Placeholder for map-->
+        <div id="buts-OM" style="width: 100%; height: 400px;"></div>
+    </div>
+</div>
+
+<!-- Altair plot placeholder -->
+<div class="row">
+    <div class="col-sm">
+        <!-- Placeholder for map-->
+        
+    </div>
+</div>
+
+<!-- Render Charts -->
+<script type="text/javascript">
+    function parse(url, div) {
+        var opt = {
+            mode: "vega-lite",
+            renderer: "svg",
+            actions: { export: true, source: false, editor: false },
+        };
+        vegaEmbed("#" + div, url, opt, function (error, result) {
+            // result.view is the Vega View, url is the original Vega-Lite specification
+            vegaTooltip.vegaLite(result.view, url);
+        });
+    }
+
+    //Parse your Json variable here
+    {% if context.plot_notes_match %}
+    parse({{ context.plot_notes_match | safe }}, "notes-match")
+    {% endif %}
+
+    {% if context.plot_notes_player %}
+    parse({{ context.plot_notes_player | safe }}, "notes-player")
+    {% endif %}
+
+    {% if context.plot_player_matchs %}
+    parse({{ context.plot_player_matchs | safe }}, "player-matchs")
+    {% endif %}
+
+</script>
+{% endblock my_content %}
