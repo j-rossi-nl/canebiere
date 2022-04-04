@@ -112,9 +112,9 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
         
         adversaire = row["Adversaire"]
         if row['Domicile']:
-            match_title = f'OM - {adversaire} {row["Buts_R"]}-{row["Buts_V"]}'
+            match_title = f'OM-{adversaire} {row["Buts_R"]}-{row["Buts_V"]}'
         else:
-            match_title = f'{adversaire} - OM {row["Buts_R"]}-{row["Buts_V"]}'
+            match_title = f'{adversaire}-OM {row["Buts_R"]}-{row["Buts_V"]}'
         date = row["Date"]
         soup = BeautifulSoup(row["html"], features="lxml")
         data = []

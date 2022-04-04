@@ -4,6 +4,8 @@ import altair as alt
 def plot_match_notes(static_url: str):
     graph = alt.Chart(static_url + '/notes.csv').mark_circle().transform_filter(
         alt.datum.match_rank <= 5
+    ).transform_calculate(
+        team_labels="split(datum.Match_Teams, ' ')"
     ).transform_aggregate(
         Note_num_count="count()",
         ranker="max(match_rank)",
@@ -12,7 +14,7 @@ def plot_match_notes(static_url: str):
         x=alt.X(
             'Match_Teams:N',
             title=None,
-            axis=alt.Axis(ticks=False, grid=False, labelFontSize=16, labelAngle=0, orient='top'),
+            axis=alt.Axis(ticks=False, grid=False, labelFontSize=16, labelAngle=0, orient='top', labelExpr="split(datum.label, ' ')"),
             sort=alt.EncodingSortField("ranker", order="ascending"),
         ),
         y=alt.Y(
