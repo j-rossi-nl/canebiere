@@ -109,7 +109,7 @@ def _resultats(blaah_: pd.DataFrame) -> pd.DataFrame:
     return blaah
 
 
-def resultats(blaah_: pd.DataFrame, to_: Path = Optional[None]) -> pd.DataFrame:
+def resultats(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     blaah = _resultats(blaah_)
     blaah.drop(columns=["html"], inplace=True)
     if to_ is not None:
