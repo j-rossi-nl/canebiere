@@ -91,6 +91,21 @@ def _resultats(blaah_: pd.DataFrame) -> pd.DataFrame:
         return "Défaite"
 
     blaah["Résultat"] = blaah.apply(resultat, axis=1)
+
+    normalize = [
+        {"dups": ["ASSE", "Saint-Etienne", "Saint-Étienne"], "norm": "ASSE"},
+        {"dups": ["TFC", "Toulouse"], "norm": "Toulouse"},
+        {"dups": ["MHSC", "Montpellier"], "norm": "Montpellier"},
+        {"dups": ["Gazélec", "Gazéléc"], "norm": "Gazélec Ajaccio"},
+        {"dups": ["Konyaspor", "Konyasport"], "norm": "Konyaspor"},
+        {"dups": ["Salzbourg", "Salzburg"], "norm": "Salzburg"},
+        {"dups": ["Athletic", "Bilbao"], "norm": "Athletic Bilbao"},
+        {"dups": ["Atlético"], "norm": "Atletico Madrid"}
+    ]
+
+    for dedup in normalize:
+        blaah.loc[blaah["Adversaire"].isin(dedup["dups"]), "Adversaire"] = dedup["norm"]
+
     return blaah
 
 
@@ -109,7 +124,6 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     note_num = re.compile(r"^(?P<num>\d+)(?P<plus>[\+\-]?)$")
 
     def extract_notes(row: pd.Series) -> pd.DataFrame:
-        
         adversaire = row["Adversaire"]
         if row['Domicile']:
             match_title = f'OM-{adversaire} {row["Buts_R"]}-{row["Buts_V"]}'
@@ -171,6 +185,9 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     notes["sort"] = (notes["Date"].dt.strftime("%Y%m%d")).astype(int)
     notes["count"] = 1
     notes["match_rank"] = notes["sort"].rank(ascending=False, method="dense")
+
+    nb_notes = notes.groupby('Joueur').size().rename('Joueur')
+    notes = notes.join(nb_notes[nb_notes >= 5], on='Joueur', how='inner', rsuffix='drop_')
 
     if to_ is not None:
         notes.to_csv(to_, index=False)
