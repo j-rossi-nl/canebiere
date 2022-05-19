@@ -1,0 +1,93 @@
+{% extends "layout.html" %}
+{% block script %}
+<!-- 
+put your custom script or styling here
+
+-->
+{% endblock script %}
+
+
+{% block my_content %}
+<div class="row row-no-gutters">
+    <div class="col-md-4">
+        <!-- small box -->
+        <div class="small-box" style="background-color: white;">
+            <div class="inner">
+                <h3>5 derniers matchs</h3>
+            </div>
+            <div id="notes-match" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <div class="col-md-4">
+        <!-- small box -->
+        <div class="small-box", style="background-color: white;">
+            <div class="inner">
+                <h3>Les Notes</h3>
+            </div>
+            <div id="notes-player" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+    <!-- ./col -->
+    <!-- ./col -->
+    <div class="col-md-4">
+        <!-- small box -->
+        <div class="small-box" style="background-color: white;">
+            <div class="inner">
+                <h3>Les Joueurs</h3>
+            </div>
+            <div id="player-matchs" style="width: 100%; height: 250px;"></div>
+        </div>
+    </div>
+    <!-- ./col -->
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <div class="small-box" style="background-color: white;">
+            <div class="inner">
+                <h3>Les Moyennes</h3>
+            </div>
+            <div id="all-player-means" style="width: 100%; height: 100px;"></div>
+            <div id="all-player-notes" style="width: 100%; height: 400px;"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Render Charts -->
+<script type="text/javascript">
+    function parse(url, div) {
+        var opt = {
+            mode: "vega-lite",
+            renderer: "svg",
+            actions: { export: true, source: false, compiled: false, editor: false },
+        };
+        vegaEmbed("#" + div, url, opt, function (error, result) {
+            // result.view is the Vega View, url is the original Vega-Lite specification
+            vegaTooltip.vegaLite(result.view, url);
+        });
+    }
+
+    //Parse your Json variable here
+    {% if context.plot_recent_match_notes %}
+    parse({{ context.plot_recent_match_notes | safe }}, "notes-match")
+    {% endif %}
+
+    {% if context.plot_recent_player_notes %}
+    parse({{ context.plot_recent_player_notes | safe }}, "notes-player")
+    {% endif %}
+
+    {% if context.plot_recent_player_matchs %}
+    parse({{ context.plot_recent_player_matchs | safe }}, "player-matchs")
+    {% endif %}
+
+    {% if context.plot_all_player_notes %}
+    parse({{ context.plot_all_player_notes | safe }}, "all-player-notes")
+    {% endif %}
+
+    {% if context.plot_all_player_means %}
+    parse({{ context.plot_all_player_means | safe }}, "all-player-means")
+    {% endif %}
+
+</script>
+{% endblock my_content %}
