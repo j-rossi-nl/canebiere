@@ -5,3 +5,4 @@ poetry run jupyter nbconvert --execute --no-input --to html generate_academies.i
 poetry run jupyter nbconvert --execute --no-input --to html generate_notes.ipynb --output notes  
 poetry run jupyter nbconvert --execute --no-input --to html generate_opponents.ipynb --output opponents  
 poetry run jupyter nbconvert --execute --no-input --to html generate_words.ipynb --output words  
+poetry run jupyter nbconvert --execute --no-input --to html generate_2021_2022.ipynb --output 2021_2022  
