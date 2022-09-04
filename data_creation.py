@@ -24,10 +24,9 @@ def main():
     fr = spacy.load('fr_core_news_sm')
 
     if args.all:
-        df = pd.concat(pd.read_json(jsonl, orient="record", lines=True, convert_dates=False) for jsonl in Path("scraper").glob("*.jsonl"))
+        df = pd.concat(pd.read_json(jsonl, orient="record", lines=True) for jsonl in Path("scraper").glob("*.jsonl"))
 
-        df.columns = ["Titre", "Date", "Commentaires","html", "full_text", "url", "Auteur"]
-        df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
+        df.columns = ["Titre", "Date", "html", "full_text", "url", "Auteur"]
         df["Mois"] = df['Date'].dt.to_period('M')
         df["Année"] = df['Date'].dt.to_period('Y')
         df["Publications"] = 1

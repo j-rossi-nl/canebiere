@@ -13,7 +13,6 @@ class CanebiereItem(scrapy.Item):
     # name = scrapy.Field()
     title = scrapy.Field()
     date = scrapy.Field()
-    nb_commentaires = scrapy.Field()
     full_text = scrapy.Field()
     html = scrapy.Field()
     url = scrapy.Field()
