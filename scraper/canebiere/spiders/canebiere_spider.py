@@ -32,7 +32,7 @@ class CanebiereSpider(Spider):
 		yield Request(url=previous, callback=self.parse_result_page)
 
 		# All articles on this results pages
-		articles = response.xpath("//h3[@class='article-title article-title-1']/a/@href").getall()
+		articles = response.xpath("//main[@class='site-main' and @id='main']//div[@class='spotlight-post']//h3[@class='article-title article-title-1']/a/@href").getall()
 		for article in articles:
 			yield Request(url=article, callback=self.parse_article)
 
