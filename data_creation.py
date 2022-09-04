@@ -46,7 +46,7 @@ def main():
         most_recent = sorted(jsons, key=lambda x: x.stat().st_mtime, reverse=True)[0]
         df = pd.read_json(most_recent, orient="record", lines=True, convert_dates=False) 
 
-        df.columns = ["Titre", "Date", "Commentaires","html", "full_text", "url", "Auteur"]
+        df.columns = ["Titre", "Date", "html", "full_text", "url", "Auteur"]
         df["Date"] = pd.to_datetime(df["Date"], dayfirst=True)
         df["Mois"] = df['Date'].dt.to_period('M')
         df["Année"] = df['Date'].dt.to_period('Y')
