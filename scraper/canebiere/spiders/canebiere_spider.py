@@ -6,6 +6,8 @@ from scrapy.http import Response
 from ..items import CanebiereItem
 import re
 
+from bs4.element import Tag
+from bs4 import BeautifulSoup
 
 class CanebiereSpider(Spider):
 	name = 'canebiere_spider'
@@ -25,32 +27,41 @@ class CanebiereSpider(Spider):
 
 	def parse_result_page(self, response):
 		# This function parses the search result page
-		# Link to 'Previous Page' (read all pages from last to first)
-		previous = response.xpath("//div[@class='nav-previous']/a/@href").get()
+		# Link to 'Next Page' (read all pages from first to last)
+		previous = response.xpath("//a[@class='next page-numbers']/@href").get()  
 		yield Request(url=previous, callback=self.parse_result_page)
 
 		# All articles on this results pages
-		articles = response.xpath("//h2[@class='entry-title']/a/@href").getall()
+		articles = response.xpath("//h3[@class='article-title article-title-1']/a/@href").getall()
 		for article in articles:
 			yield Request(url=article, callback=self.parse_article)
 
-	def parse_article(self, response: Response):
+	def parse_article(self, response):
 		article_title = response.xpath("//h1[@class='entry-title']/text()").get()
-		article_body_html_xpath = response.xpath("//div[@class='mag-content']")
+		article_body_html_xpath = response.xpath("//div[@class='entry-content']")
 		article_body_html = article_body_html_xpath.get()
-		article_body_text = ' '.join(article_body_html_xpath.xpath(".//text()").getall())
+		
+		article_soup = BeautifulSoup(article_body_html)
+		
+		# Remove the sharing footer
+		sd: Tag = article_soup.find("div", **{"class": "sharedaddy sd-sharing-enabled"})
+		if sd is not None:
+			sd.decompose()
 
-		article_date = response.xpath("//time[@class='entry-date published updated']/text()").get()
-		article_nb_commentaires = response.xpath("//span[@class='comments-link']/a/text()").get()
-		article_author = response.xpath("//a[@class='url fn n']/text()").get()
+		# Remove the navigation footer
+		nav: Tag = article_soup.find("nav", **{"class": "navigation post-navigation"})
+		if nav is not None:
+			nav.decompose()
+
+		article_body_html = str(article_soup)
+		article_body_text = article_soup.get_text()
+
+		article_author = response.xpath("//span[@class='item-metadata posts-author']/a/text()").get().strip()
+		article_date = response.xpath("//meta[@property='article:published_time']/@content").get()
 
 		item = CanebiereItem()
 		item['title'] = article_title
 		item['date'] = article_date
-		try:
-			item['nb_commentaires'] = int(re.match(r'(?P<nbcomments>\d+)[^0-9]+', article_nb_commentaires).group('nbcomments'))
-		except AttributeError:
-			item['nb_commentaires'] = -1
 		item['html'] = article_body_html
 		item['full_text'] = article_body_text
 		item['url'] = response.url
