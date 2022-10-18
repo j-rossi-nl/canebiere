@@ -168,6 +168,7 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
         {"dups": ["Doria", "Diego Armando Maradoria"], "norm": "Doria"},
         {"dups": ["Njie", "Nvier"], "norm": "Njie"},
         {"dups": ["Batshuayi", "Michybre"], "norm": "Batshuayi"},
+        {"dups": ["Nuno Tavares", "Tavares"], "norm": "Nuno Tavares"}
     ]
 
     for dedup in normalize:
@@ -187,7 +188,7 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     notes["match_rank"] = notes["sort"].rank(ascending=False, method="dense")
 
     nb_notes = notes.groupby('Joueur').size().rename('Joueur')
-    notes = notes.join(nb_notes[nb_notes >= 5], on='Joueur', how='inner', rsuffix='drop_')
+    notes = notes.join(nb_notes[nb_notes >= 2], on='Joueur', how='inner', rsuffix='drop_')
 
     if to_ is not None:
         notes.to_csv(to_, index=False)
