@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for yelp project
+# Scrapy settings for canebiere project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -13,8 +13,6 @@ BOT_NAME = 'canebiere'
 
 SPIDER_MODULES = ['canebiere.spiders']
 NEWSPIDER_MODULE = 'canebiere.spiders'
-
-DELTAFETCH_ENABLED = True
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 USER_AGENT = 'julien rossi (+https://j-rossi-nl.github.io/canebiere)'
@@ -48,9 +46,9 @@ DOWNLOAD_DELAY = 1
 
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
-SPIDER_MIDDLEWARES = {
-   'scrapy_deltafetch.DeltaFetch': 100,
-}
+#SPIDER_MIDDLEWARES = {
+#   'canebiere.middlewares.CanebiereSpiderMiddleware': 543,
+#}
 
 
 # Configure item pipelines
@@ -80,4 +78,4 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-# LOG_LEVEL = 'ERROR'
+LOG_LEVEL = 'INFO'

@@ -76,7 +76,7 @@ def _resultats(blaah_: pd.DataFrame) -> pd.DataFrame:
     blaah["Buts_Adversaire"] = blaah.apply(
         lambda x: x["Buts_V"] if x["Domicile"] else x["Buts_R"], axis=1
     )
-    blaah.dropna(subset=["Buts_OM", "Buts_Adversaire"], inplace=True)
+    blaah = blaah.dropna(subset=["Buts_OM", "Buts_Adversaire"])
     for col in ["Buts_OM", "Buts_Adversaire", "Buts_V", "Buts_R"]:
         blaah[col] = blaah[col].astype(int)
 
@@ -111,7 +111,7 @@ def _resultats(blaah_: pd.DataFrame) -> pd.DataFrame:
 
 def resultats(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     blaah = _resultats(blaah_)
-    blaah.drop(columns=["html"], inplace=True)
+    blaah = blaah.drop(columns=["html"])
     if to_ is not None:
         blaah.to_csv(to_, index=False)
     return blaah
@@ -187,8 +187,8 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     notes["count"] = 1
     notes["match_rank"] = notes["sort"].rank(ascending=False, method="dense")
 
-    nb_notes = notes.groupby('Joueur').size().rename('Joueur')
-    notes = notes.join(nb_notes[nb_notes >= 2], on='Joueur', how='inner', rsuffix='drop_')
+    # On ne garde que les joueurs notés au moins 2 fois
+    notes = notes[notes.groupby('Joueur')['Joueur'].transform('size') >= 2]
 
     if to_ is not None:
         notes.to_csv(to_, index=False)

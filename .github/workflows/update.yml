@@ -1,0 +1,105 @@
+name: Mise à jour
+
+on:
+  schedule:
+    # Tous les jours à 7h17 UTC: les académies sortent en général le lendemain du match
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Regénérer le site même sans nouvelle académie"
+        type: boolean
+        default: false
+  push:
+    branches: [main]
+    paths:
+      - "*.ipynb"
+      - "utils/**"
+      - "build_site.py"
+      - "data_creation.py"
+      - "generate_website.sh"
+      - "pyproject.toml"
+      - "uv.lock"
+      - ".github/workflows/update.yml"
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    outputs:
+      new: ${{ steps.commit.outputs.new }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+
+      - run: uv sync --locked --no-dev
+
+      - name: Scraper les nouvelles académies
+        working-directory: scraper
+        run: uv run scrapy crawl canebiere_spider
+
+      - name: Commiter les nouvelles académies
+        id: commit
+        run: |
+          git add data/articles
+          if git diff --cached --quiet; then
+            echo "new=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Nouvelles académies $(date -u +%Y-%m-%d)" -m "$(git diff --cached --name-only)"
+          git push
+          echo "new=true" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: scrape
+    if: needs.scrape.outputs.new == 'true' || inputs.force || github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # la branche telle que poussée par le job scrape
+          ref: ${{ github.ref_name }}
+
+      - uses: astral-sh/setup-uv@v10.3.3
+        with:
+          enable-cache: true
+
+      - run: uv sync --locked --no-dev
+
+      - name: Préparer les données
+        run: uv run python data_creation.py
+
+      - name: Générer le site
+        run: ./generate_website.sh
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
