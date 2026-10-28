@@ -1,0 +1,236 @@
+{
+  "__init__.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4986746,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "dashboard/config.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4986787,
+    "ast_hash": "669fe17a85d8f51eb6c32174ed3548e4",
+    "semantic_hash": "669fe17a85d8f51eb6c32174ed3548e4"
+  },
+  "dashboard/run.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.498681,
+    "ast_hash": "e5910b264867de600a046ff8226fa4fc",
+    "semantic_hash": "e5910b264867de600a046ff8226fa4fc"
+  },
+  "dashboard/web/__init__.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.498682,
+    "ast_hash": "bd972585d758b141b9e67976a5585315",
+    "semantic_hash": "bd972585d758b141b9e67976a5585315"
+  },
+  "dashboard/web/routes.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.498683,
+    "ast_hash": "d22d904198cda9987deb7d17029cd663",
+    "semantic_hash": "d22d904198cda9987deb7d17029cd663"
+  },
+  "dashboard/web/utils/__init__.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.498684,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "dashboard/web/utils/altair_plot.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4986846,
+    "ast_hash": "acc9b7f079366d7d1482e5198f97ce60",
+    "semantic_hash": "acc9b7f079366d7d1482e5198f97ce60"
+  },
+  "dashboard/web/utils/utils.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4986854,
+    "ast_hash": "704fe4aba59cad5c07077ef9e8687a12",
+    "semantic_hash": "704fe4aba59cad5c07077ef9e8687a12"
+  },
+  "data_creation.py": {
+    "mtime": 1793201505.7496185,
+    "seen": 1793202623.4460144,
+    "ast_hash": "519809bda3b55b58b8fc538a48fd8928",
+    "semantic_hash": ""
+  },
+  "generate_website.sh": {
+    "mtime": 1793201505.7496185,
+    "seen": 1793202623.4460151,
+    "ast_hash": "94eb99a2269680868957f9a6da582339",
+    "semantic_hash": ""
+  },
+  "pyproject.toml": {
+    "mtime": 1793201505.7506185,
+    "seen": 1793202623.446016,
+    "ast_hash": "52791c127cd21975e93eb54b76c1fc9c",
+    "semantic_hash": ""
+  },
+  "scraper/canebiere/__init__.py": {
+    "mtime": 1562152548.0,
+    "seen": 1793198081.4986892,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "scraper/canebiere/items.py": {
+    "mtime": 1662295716.0,
+    "seen": 1793198081.4986901,
+    "ast_hash": "c0e9768dbd38a1b226410c9f377d49a5",
+    "semantic_hash": "c0e9768dbd38a1b226410c9f377d49a5"
+  },
+  "scraper/canebiere/pipelines.py": {
+    "mtime": 1793201505.7506185,
+    "seen": 1793202623.4460182,
+    "ast_hash": "c2e6bbcda8f4784c8e313f0cc918320b",
+    "semantic_hash": ""
+  },
+  "scraper/canebiere/settings.py": {
+    "mtime": 1793201505.7506185,
+    "seen": 1793202623.446019,
+    "ast_hash": "74d9d77bf768b092215400d438bfdee8",
+    "semantic_hash": ""
+  },
+  "scraper/canebiere/spiders/__init__.py": {
+    "mtime": 1562152548.0,
+    "seen": 1793198081.498692,
+    "ast_hash": "128a904945986bdf14c329e8e0545963",
+    "semantic_hash": "128a904945986bdf14c329e8e0545963"
+  },
+  "scraper/canebiere/spiders/canebiere_spider.py": {
+    "mtime": 1793201505.7515213,
+    "seen": 1793202623.4460206,
+    "ast_hash": "6a7dda9105bb3c72b9ff5cb201a1170c",
+    "semantic_hash": ""
+  },
+  "utils/__init__.py": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4986937,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "utils/data.py": {
+    "mtime": 1793202611.6135988,
+    "seen": 1793202623.4460227,
+    "ast_hash": "342be3e1a883a3927ab5ac9413c167fe",
+    "semantic_hash": ""
+  },
+  "CLAUDE.md": {
+    "mtime": 1793197900.8897922,
+    "seen": 1793198081.4987018,
+    "ast_hash": "82efb97a359f5c7290bf2513d14686be",
+    "semantic_hash": "82efb97a359f5c7290bf2513d14686be"
+  },
+  "dashboard/web/templates/layout.html": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4987028,
+    "ast_hash": "3854903b2103af96ffb0fef7f4eff25c",
+    "semantic_hash": "3854903b2103af96ffb0fef7f4eff25c"
+  },
+  "dashboard/web/templates/recent.html": {
+    "mtime": 1652973091.0,
+    "seen": 1793198081.4987037,
+    "ast_hash": "1cbe21e6398e7720a38f51125c85bce6",
+    "semantic_hash": "1cbe21e6398e7720a38f51125c85bce6"
+  },
+  ".claude/settings.json": {
+    "mtime": 1793197900.8899763,
+    "seen": 1793200269.2326396,
+    "ast_hash": "65e83c3196a0e709fe87aaaf2c133787",
+    "semantic_hash": ""
+  },
+  "build_site.py": {
+    "mtime": 1793201505.6833513,
+    "seen": 1793202623.4459996,
+    "ast_hash": "d7f33f3385079a57cf2ccc9dce6461fc",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.bundle.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326536,
+    "ast_hash": "1a94abb2d5270a12fa1ffba3a186737d",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.bundle.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326546,
+    "ast_hash": "a5334e475209f965b4862f3bedf32618",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326553,
+    "ast_hash": "702049b302bef35ba3614119b4c82cce",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326565,
+    "ast_hash": "61f338f870fcd0ff46362ef109d28533",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/core.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326572,
+    "ast_hash": "0bcb7ccc3d7603c2035e5cd3b93dc2bf",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.232658,
+    "ast_hash": "11c05eb286ed576526bf4543760785b9",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326586,
+    "ast_hash": "220afd743d9e9643852e31a135a9f3ae",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.slim.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326593,
+    "ast_hash": "1a94b73b4b451a7872de5d76f57024e4",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.slim.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326603,
+    "ast_hash": "d9b11ca4d877c327889805b73bb79edd",
+    "semantic_hash": ""
+  },
+  "utils/articles.py": {
+    "mtime": 1793201505.7515213,
+    "seen": 1793202623.4460218,
+    "ast_hash": "0f6f7e7816e19978c84c93cf5d5f4fb6",
+    "semantic_hash": ""
+  },
+  ".github/workflows/update.yml": {
+    "mtime": 1793201505.6832125,
+    "seen": 1793202623.4460235,
+    "ast_hash": "cd263ba8918f3f1306b02c429da27670",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1793201505.6833153,
+    "seen": 1793202623.446025,
+    "ast_hash": "2b28de09b4ecd05a13fbcc31f59753a6",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-brands-400.svg": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326763,
+    "ast_hash": "0cb5a5c0d251c109458c85c6afeffbaa",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-regular-400.svg": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326775,
+    "ast_hash": "89ffa3aba80d30ee0a9371b25c968bbb",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-solid-900.svg": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326782,
+    "ast_hash": "ec763292e583294612f124c0b0def500",
+    "semantic_hash": ""
+  }
+}
