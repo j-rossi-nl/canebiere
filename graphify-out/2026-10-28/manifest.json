@@ -48,22 +48,22 @@
     "semantic_hash": "704fe4aba59cad5c07077ef9e8687a12"
   },
   "data_creation.py": {
-    "mtime": 1662295716.0,
-    "seen": 1793198081.4986868,
-    "ast_hash": "7f720f807120a871e2e6192d6f273d87",
-    "semantic_hash": "7f720f807120a871e2e6192d6f273d87"
+    "mtime": 1793201505.7496185,
+    "seen": 1793202623.4460144,
+    "ast_hash": "519809bda3b55b58b8fc538a48fd8928",
+    "semantic_hash": ""
   },
   "generate_website.sh": {
-    "mtime": 1699603611.0,
-    "seen": 1793198081.4986873,
-    "ast_hash": "4786d07746f0d2ac8666ee6df90c1c5f",
-    "semantic_hash": "4786d07746f0d2ac8666ee6df90c1c5f"
+    "mtime": 1793201505.7496185,
+    "seen": 1793202623.4460151,
+    "ast_hash": "94eb99a2269680868957f9a6da582339",
+    "semantic_hash": ""
   },
   "pyproject.toml": {
-    "mtime": 1654086179.0,
-    "seen": 1793198081.4986885,
-    "ast_hash": "ae78fc7b3bb7d4ddddcee4d467d816bc",
-    "semantic_hash": "ae78fc7b3bb7d4ddddcee4d467d816bc"
+    "mtime": 1793201505.7506185,
+    "seen": 1793202623.446016,
+    "ast_hash": "52791c127cd21975e93eb54b76c1fc9c",
+    "semantic_hash": ""
   },
   "scraper/canebiere/__init__.py": {
     "mtime": 1562152548.0,
@@ -78,16 +78,16 @@
     "semantic_hash": "c0e9768dbd38a1b226410c9f377d49a5"
   },
   "scraper/canebiere/pipelines.py": {
-    "mtime": 1645822653.0,
-    "seen": 1793198081.4986908,
-    "ast_hash": "c76a99764999a63b84e55553b3b2eb1e",
-    "semantic_hash": "c76a99764999a63b84e55553b3b2eb1e"
+    "mtime": 1793201505.7506185,
+    "seen": 1793202623.4460182,
+    "ast_hash": "c2e6bbcda8f4784c8e313f0cc918320b",
+    "semantic_hash": ""
   },
   "scraper/canebiere/settings.py": {
-    "mtime": 1662295716.0,
-    "seen": 1793198081.4986916,
-    "ast_hash": "9f5a4b36799c49eb81c92813fb44c64f",
-    "semantic_hash": "9f5a4b36799c49eb81c92813fb44c64f"
+    "mtime": 1793201505.7506185,
+    "seen": 1793202623.446019,
+    "ast_hash": "74d9d77bf768b092215400d438bfdee8",
+    "semantic_hash": ""
   },
   "scraper/canebiere/spiders/__init__.py": {
     "mtime": 1562152548.0,
@@ -96,10 +96,10 @@
     "semantic_hash": "128a904945986bdf14c329e8e0545963"
   },
   "scraper/canebiere/spiders/canebiere_spider.py": {
-    "mtime": 1662318810.0,
-    "seen": 1793198081.4986928,
-    "ast_hash": "a6d2f1ed3668b971d2c13799a3e840c1",
-    "semantic_hash": "a6d2f1ed3668b971d2c13799a3e840c1"
+    "mtime": 1793201505.7515213,
+    "seen": 1793202623.4460206,
+    "ast_hash": "6a7dda9105bb3c72b9ff5cb201a1170c",
+    "semantic_hash": ""
   },
   "utils/__init__.py": {
     "mtime": 1652973091.0,
@@ -108,58 +108,10 @@
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
   "utils/data.py": {
-    "mtime": 1666081326.0,
-    "seen": 1793198081.4986944,
-    "ast_hash": "c3200043e5d54b83482ec13ca7120482",
-    "semantic_hash": "c3200043e5d54b83482ec13ca7120482"
-  },
-  "graphify-out/converted/generate_2021_2022.py": {
-    "mtime": 1793197977.9741602,
-    "seen": 1793198081.4986951,
-    "ast_hash": "c5a6df33129360ccf7323fad88718e29",
-    "semantic_hash": "c5a6df33129360ccf7323fad88718e29"
-  },
-  "graphify-out/converted/generate_2022_2023.py": {
-    "mtime": 1793197977.9753807,
-    "seen": 1793198081.4986959,
-    "ast_hash": "9fefebae66988b49d3a99282c110f339",
-    "semantic_hash": "9fefebae66988b49d3a99282c110f339"
-  },
-  "graphify-out/converted/generate_2023_2024.py": {
-    "mtime": 1793197977.9756134,
-    "seen": 1793198081.4986968,
-    "ast_hash": "656dea7f1a29f501dd4352a3a8108545",
-    "semantic_hash": "656dea7f1a29f501dd4352a3a8108545"
-  },
-  "graphify-out/converted/generate_academies.py": {
-    "mtime": 1793197977.9761329,
-    "seen": 1793198081.4986982,
-    "ast_hash": "33c13213cba64734624cd38bbaf33ef4",
-    "semantic_hash": "33c13213cba64734624cd38bbaf33ef4"
-  },
-  "graphify-out/converted/generate_notes.py": {
-    "mtime": 1793197977.9834208,
-    "seen": 1793198081.498699,
-    "ast_hash": "710301eaf77bff8a5ad4d8fea60b402e",
-    "semantic_hash": "710301eaf77bff8a5ad4d8fea60b402e"
-  },
-  "graphify-out/converted/generate_opponents.py": {
-    "mtime": 1793197977.9847085,
-    "seen": 1793198081.4986994,
-    "ast_hash": "f72bed5eb20a34479ad9b4618edcbfb1",
-    "semantic_hash": "f72bed5eb20a34479ad9b4618edcbfb1"
-  },
-  "graphify-out/converted/generate_page.py": {
-    "mtime": 1793197977.9848018,
-    "seen": 1793198081.4987004,
-    "ast_hash": "f97b290b559d828858dd1147564607b2",
-    "semantic_hash": "f97b290b559d828858dd1147564607b2"
-  },
-  "graphify-out/converted/generate_words.py": {
-    "mtime": 1793197977.9961035,
-    "seen": 1793198081.498701,
-    "ast_hash": "cbdaf7c776336b2b1924a19fe6d02501",
-    "semantic_hash": "cbdaf7c776336b2b1924a19fe6d02501"
+    "mtime": 1793202611.6135988,
+    "seen": 1793202623.4460227,
+    "ast_hash": "342be3e1a883a3927ab5ac9413c167fe",
+    "semantic_hash": ""
   },
   "CLAUDE.md": {
     "mtime": 1793197900.8897922,
@@ -178,5 +130,107 @@
     "seen": 1793198081.4987037,
     "ast_hash": "1cbe21e6398e7720a38f51125c85bce6",
     "semantic_hash": "1cbe21e6398e7720a38f51125c85bce6"
+  },
+  ".claude/settings.json": {
+    "mtime": 1793197900.8899763,
+    "seen": 1793200269.2326396,
+    "ast_hash": "65e83c3196a0e709fe87aaaf2c133787",
+    "semantic_hash": ""
+  },
+  "build_site.py": {
+    "mtime": 1793201505.6833513,
+    "seen": 1793202623.4459996,
+    "ast_hash": "d7f33f3385079a57cf2ccc9dce6461fc",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.bundle.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326536,
+    "ast_hash": "1a94abb2d5270a12fa1ffba3a186737d",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.bundle.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326546,
+    "ast_hash": "a5334e475209f965b4862f3bedf32618",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326553,
+    "ast_hash": "702049b302bef35ba3614119b4c82cce",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/bootstrap/js/bootstrap.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326565,
+    "ast_hash": "61f338f870fcd0ff46362ef109d28533",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/core.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326572,
+    "ast_hash": "0bcb7ccc3d7603c2035e5cd3b93dc2bf",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.232658,
+    "ast_hash": "11c05eb286ed576526bf4543760785b9",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326586,
+    "ast_hash": "220afd743d9e9643852e31a135a9f3ae",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.slim.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326593,
+    "ast_hash": "1a94b73b4b451a7872de5d76f57024e4",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/jquery/jquery.slim.min.js": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326603,
+    "ast_hash": "d9b11ca4d877c327889805b73bb79edd",
+    "semantic_hash": ""
+  },
+  "utils/articles.py": {
+    "mtime": 1793201505.7515213,
+    "seen": 1793202623.4460218,
+    "ast_hash": "0f6f7e7816e19978c84c93cf5d5f4fb6",
+    "semantic_hash": ""
+  },
+  ".github/workflows/update.yml": {
+    "mtime": 1793201505.6832125,
+    "seen": 1793202623.4460235,
+    "ast_hash": "cd263ba8918f3f1306b02c429da27670",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1793201505.6833153,
+    "seen": 1793202623.446025,
+    "ast_hash": "2b28de09b4ecd05a13fbcc31f59753a6",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-brands-400.svg": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326763,
+    "ast_hash": "0cb5a5c0d251c109458c85c6afeffbaa",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-regular-400.svg": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326775,
+    "ast_hash": "89ffa3aba80d30ee0a9371b25c968bbb",
+    "semantic_hash": ""
+  },
+  "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-solid-900.svg": {
+    "mtime": 1652973091.0,
+    "seen": 1793200269.2326782,
+    "ast_hash": "ec763292e583294612f124c0b0def500",
+    "semantic_hash": ""
   }
 }

@@ -1,11 +1,11 @@
 {
-  "0": "data.py",
-  "1": "data_creation.py",
+  "0": "season.py",
+  "1": "Ee",
   "2": "routes.py",
   "3": "parse(url, div)",
-  "4": "utils.py",
+  "4": "Season",
   "5": "canebiere_spider.py",
-  "6": "WriteItemPipeline",
+  "6": "t",
   "7": "config.py",
   "8": "Graphify Knowledge Graph (graphify-out/)",
   "9": "generate_website.sh",
@@ -25,10 +25,10 @@
   "23": "bootstrap.js",
   "24": "getReferenceOffsets",
   "25": "Animation",
-  "26": "build_site.py",
+  "26": "e",
   "27": "bootstrap.min.js",
   "28": "domManip",
-  "29": "articles.py",
+  "29": "l",
   "30": "matcherFromTokens",
   "31": "matcherFromTokens",
   "32": "getBoundingClientRect",
@@ -49,5 +49,6 @@
   "47": "inspect",
   "48": "createCache",
   "49": "on",
-  "50": "on"
+  "50": "on",
+  "51": "Ie"
 }

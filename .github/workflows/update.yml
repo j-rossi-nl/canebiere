@@ -15,6 +15,7 @@ on:
     paths:
       - "*.ipynb"
       - "utils/**"
+      - "templates/**"
       - "build_site.py"
       - "data_creation.py"
       - "generate_website.sh"

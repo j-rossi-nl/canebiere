@@ -10,6 +10,7 @@ import papermill
 from nbconvert import HTMLExporter
 
 from utils.articles import season_page_name, season_pages
+from utils.season import render_season
 
 ROOT = Path(__file__).parent
 
@@ -64,7 +65,8 @@ def main():
     for season in season_pages():
         page = season_page_name(season)
         if wanted(page):
-            render(ROOT / "generate_season.ipynb", page, args.out, {"season": season}, f"Saison {season}")
+            print(f"saison {season} -> {page}.html", flush=True)
+            render_season(season, args.out)
 
 
 if __name__ == "__main__":
