@@ -4,26 +4,24 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
-from datetime import datetime
-
-from scrapy.exporters import JsonLinesItemExporter
+from utils.articles import write_articles
 
 
 class WriteItemPipeline(object):
-
-    def __init__(self):
-        self.filename = f"canebiere-{datetime.now().strftime('%Y%m%d%H%M')}.jsonl"
+    """Accumule les académies et les range dans data/articles/<saison>.jsonl à la fin du crawl."""
 
     def open_spider(self, spider):
-        self.jsonfile = open(self.filename, 'wb')
-        self.exporter = JsonLinesItemExporter(self.jsonfile)
-        self.exporter.start_exporting()
+        self.items = []
 
     def close_spider(self, spider):
-        self.exporter.finish_exporting()
-        self.jsonfile.close()
+        if not self.items:
+            spider.logger.info('Aucune nouvelle académie')
+            return
+        for path in write_articles(self.items):
+            spider.logger.info(f'Écrit: {path}')
+        spider.logger.info(f'{len(self.items)} nouvelle(s) académie(s)')
 
     def process_item(self, item, spider):
-        print('Process: {}'.format(item))
-        self.exporter.export_item(item)
+        spider.logger.info(f"Nouvelle académie: {item['date']} {item['title']}")
+        self.items.append(dict(item))
         return item

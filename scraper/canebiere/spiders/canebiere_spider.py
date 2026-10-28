@@ -1,69 +1,67 @@
-import logging
+import html
 
+from urllib.parse import urlencode
+
+from bs4 import BeautifulSoup
 from scrapy import Spider, Request
 from scrapy.http import Response
 
-from ..items import CanebiereItem
-import re
+from utils.articles import known_urls
 
-from bs4.element import Tag
-from bs4 import BeautifulSoup
+from ..items import CanebiereItem
+
 
 class CanebiereSpider(Spider):
+	"""
+	Lit les académies via l'API REST WordPress de horsjeu.net, de la plus récente à la plus ancienne.
+	S'arrête à la première académie déjà présente dans data/articles (sauf avec `-a full=true`).
+	"""
 	name = 'canebiere_spider'
-	allowed_urls = ['https://horsjeu.net/']
-	root_url = 'https://horsjeu.net/category/france/lelite/la-canebiere-academie/'
-	start_urls = [root_url]
+	allowed_domains = ['horsjeu.net']
+	api_url = 'https://horsjeu.net/wp-json/wp/v2/posts'
+	category_id = 1346  # https://horsjeu.net/category/france/lelite/la-canebiere-academie/
+	per_page = 50
 
-	custom_settings = {
-		"LOG_ENABLED": False
-	}
+	def __init__(self, full: str = 'false', *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		self.full = full.lower() in ('1', 'true', 'yes')
+		self.known = set() if self.full else known_urls()
 
-	def parse(self, response):
-		self.logger.setLevel(logging.WARN)
-		# This is the default callback for the starting page
-		# Parse the starting page as a result page
-		yield Request(url=response.url, callback=self.parse_result_page, dont_filter=True)
+	async def start(self):
+		yield self.page_request(1)
 
-	def parse_result_page(self, response):
-		# This function parses the search result page
-		# Link to 'Next Page' (read all pages from first to last)
-		previous = response.xpath("//a[@class='next page-numbers']/@href").get()  
-		yield Request(url=previous, callback=self.parse_result_page)
+	def page_request(self, page: int) -> Request:
+		params = {
+			'categories': self.category_id,
+			'per_page': self.per_page,
+			'page': page,
+			'orderby': 'date',
+			'order': 'desc',
+			'_embed': 'author',
+			'_fields': 'date_gmt,link,title,content,_links,_embedded',
+		}
+		return Request(f'{self.api_url}?{urlencode(params)}', callback=self.parse_page, cb_kwargs={'page': page})
 
-		# All articles on this results pages
-		articles = response.xpath("//main[@class='site-main' and @id='main']//div[@class='spotlight-post']//h3[@class='article-title article-title-1']/a/@href").getall()
-		for article in articles:
-			yield Request(url=article, callback=self.parse_article)
+	def parse_page(self, response: Response, page: int):
+		for post in response.json():
+			if post['link'] in self.known:
+				self.logger.info(f"Déjà connue, on s'arrête là: {post['link']}")
+				return
+			yield self.to_item(post)
 
-	def parse_article(self, response):
-		article_title = response.xpath("//h1[@class='entry-title']/text()").get()
-		article_body_html_xpath = response.xpath("//div[@class='entry-content']")
-		article_body_html = article_body_html_xpath.get()
-		
-		article_soup = BeautifulSoup(article_body_html)
-		
-		# Remove the sharing footer
-		sd: Tag = article_soup.find("div", **{"class": "sharedaddy sd-sharing-enabled"})
-		if sd is not None:
-			sd.decompose()
+		if page < int(response.headers.get('X-WP-TotalPages', 0)):
+			yield self.page_request(page + 1)
 
-		# Remove the navigation footer
-		nav: Tag = article_soup.find("nav", **{"class": "navigation post-navigation"})
-		if nav is not None:
-			nav.decompose()
-
-		article_body_html = str(article_soup)
-		article_body_text = article_soup.get_text()
-
-		article_author = response.xpath("//span[@class='item-metadata posts-author']/a/text()").get().strip()
-		article_date = response.xpath("//meta[@property='article:published_time']/@content").get()
+	@staticmethod
+	def to_item(post: dict) -> CanebiereItem:
+		body_html = post['content']['rendered']
+		authors = post.get('_embedded', {}).get('author', [])
 
 		item = CanebiereItem()
-		item['title'] = article_title
-		item['date'] = article_date
-		item['html'] = article_body_html
-		item['full_text'] = article_body_text
-		item['url'] = response.url
-		item['author'] = article_author
-		yield item
+		item['title'] = html.unescape(post['title']['rendered'])
+		item['date'] = f"{post['date_gmt']}+00:00"
+		item['html'] = body_html
+		item['full_text'] = BeautifulSoup(body_html, 'html.parser').get_text()
+		item['url'] = post['link']
+		item['author'] = authors[0]['name'].strip() if authors else None
+		return item
