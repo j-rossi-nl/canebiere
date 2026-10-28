@@ -168,7 +168,9 @@ def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
         {"dups": ["Doria", "Diego Armando Maradoria"], "norm": "Doria"},
         {"dups": ["Njie", "Nvier"], "norm": "Njie"},
         {"dups": ["Batshuayi", "Michybre"], "norm": "Batshuayi"},
-        {"dups": ["Nuno Tavares", "Tavares"], "norm": "Nuno Tavares"}
+        {"dups": ["Nuno Tavares", "Tavares"], "norm": "Nuno Tavares"},
+        {"dups": ["Paixão", "Paixao"], "norm": "Paixão"},
+        {"dups": ["Højbjerg", "Høbjerg", "Højberg", "Hojbjerg", "Hobjerg"], "norm": "Højbjerg"}
     ]
 
     for dedup in normalize:
