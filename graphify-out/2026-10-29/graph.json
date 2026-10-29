@@ -25,19 +25,6 @@
   },
   "nodes": [
     {
-      "id": "scraper_canebiere_pipelines_writeitempipeline",
-      "label": "WriteItemPipeline",
-      "_callable": true,
-      "_callable_class": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "writeitempipeline",
-      "source_file": "scraper/canebiere/pipelines.py",
-      "source_location": "L10"
-    },
-    {
       "id": "utils_season_season",
       "label": "Season",
       "_callable": true,
@@ -48,7 +35,7 @@
       "file_type": "code",
       "norm_label": "season",
       "source_file": "utils/season.py",
-      "source_location": "L49"
+      "source_location": "L50"
     },
     {
       "id": "scraper_canebiere_items_canebiereitem",
@@ -78,6 +65,19 @@
       "norm_label": "canebierespider",
       "source_file": "scraper/canebiere/spiders/canebiere_spider.py",
       "source_location": "L14"
+    },
+    {
+      "id": "scraper_canebiere_pipelines_writeitempipeline",
+      "label": "WriteItemPipeline",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "WriteItemPipeline",
+      "file_type": "code",
+      "norm_label": "writeitempipeline",
+      "source_file": "scraper/canebiere/pipelines.py",
+      "source_location": "L10"
     },
     {
       "id": "dashboard_config_config",
@@ -117,198 +117,6 @@
       "source_location": "L35"
     },
     {
-      "id": "dashboard_web_utils_utils_get_by_country",
-      "label": "get_by_country()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "get_by_country()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L173"
-    },
-    {
-      "id": "dashboard_web_utils_utils_get_by_country_merged",
-      "label": "get_by_country_merged()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "get_by_country_merged()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L187"
-    },
-    {
-      "id": "dashboard_web_utils_utils_get_per_country_data",
-      "label": "get_per_country_data()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "get_per_country_data()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L204"
-    },
-    {
-      "id": "dashboard_web_utils_utils_load_chartjs_map_data",
-      "label": "load_chartjs_map_data()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "load_chartjs_map_data()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L8"
-    },
-    {
-      "id": "dashboard_web_utils_utils_load_data",
-      "label": "load_data()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "load_data()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L22"
-    },
-    {
-      "id": "dashboard_web_utils_utils_merge_data",
-      "label": "merge_data()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "merge_data()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L131"
-    },
-    {
-      "id": "dashboard_web_utils_utils_preprocessed_data",
-      "label": "preprocessed_data()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "preprocessed_data()",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L49"
-    },
-    {
-      "id": "data_creation_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "data_creation.py",
-      "source_location": "L12"
-    },
-    {
-      "id": "scraper_canebiere_pipelines_writeitempipeline_close_spider",
-      "label": ".close_spider()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": ".close_spider()",
-      "source_file": "scraper/canebiere/pipelines.py",
-      "source_location": "L16"
-    },
-    {
-      "id": "scraper_canebiere_pipelines_writeitempipeline_open_spider",
-      "label": ".open_spider()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": ".open_spider()",
-      "source_file": "scraper/canebiere/pipelines.py",
-      "source_location": "L13"
-    },
-    {
-      "id": "scraper_canebiere_pipelines_writeitempipeline_process_item",
-      "label": ".process_item()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": ".process_item()",
-      "source_file": "scraper/canebiere/pipelines.py",
-      "source_location": "L24"
-    },
-    {
-      "id": "utils_articles_date_to_season",
-      "label": "date_to_season()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "date_to_season()",
-      "source_file": "utils/articles.py",
-      "source_location": "L18"
-    },
-    {
-      "id": "utils_articles_iter_articles",
-      "label": "iter_articles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "iter_articles()",
-      "source_file": "utils/articles.py",
-      "source_location": "L38"
-    },
-    {
-      "id": "utils_articles_known_urls",
-      "label": "known_urls()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "known_urls()",
-      "source_file": "utils/articles.py",
-      "source_location": "L46"
-    },
-    {
-      "id": "utils_articles_load_articles",
-      "label": "load_articles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "load_articles()",
-      "source_file": "utils/articles.py",
-      "source_location": "L73"
-    },
-    {
-      "id": "utils_articles_season_file",
-      "label": "season_file()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "season_file()",
-      "source_file": "utils/articles.py",
-      "source_location": "L25"
-    },
-    {
       "id": "utils_articles_season_page_name",
       "label": "season_page_name()",
       "_callable": true,
@@ -333,138 +141,6 @@
       "source_location": "L29"
     },
     {
-      "id": "utils_articles_write_articles",
-      "label": "write_articles()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "write_articles()",
-      "source_file": "utils/articles.py",
-      "source_location": "L50"
-    },
-    {
-      "id": "utils_data_notes",
-      "label": "notes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "notes()",
-      "source_file": "utils/data.py",
-      "source_location": "L120"
-    },
-    {
-      "id": "utils_data_notes_extract_notes",
-      "label": "extract_notes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "extract_notes()",
-      "source_file": "utils/data.py",
-      "source_location": "L126"
-    },
-    {
-      "id": "utils_data_resultats",
-      "label": "resultats()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "resultats()",
-      "source_file": "utils/data.py",
-      "source_location": "L112"
-    },
-    {
-      "id": "utils_data_resultats_96a35e",
-      "label": "_resultats()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "_resultats()",
-      "source_file": "utils/data.py",
-      "source_location": "L22"
-    },
-    {
-      "id": "utils_data_resultats_96a35e_extract_adversaire",
-      "label": "extract_adversaire()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "extract_adversaire()",
-      "source_file": "utils/data.py",
-      "source_location": "L36"
-    },
-    {
-      "id": "utils_data_resultats_96a35e_extract_buts",
-      "label": "extract_buts()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "extract_buts()",
-      "source_file": "utils/data.py",
-      "source_location": "L50"
-    },
-    {
-      "id": "utils_data_resultats_96a35e_extract_buts_apres_equipes",
-      "label": "apres_equipes()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "apres_equipes()",
-      "source_file": "utils/data.py",
-      "source_location": "L51"
-    },
-    {
-      "id": "utils_data_resultats_96a35e_resultat",
-      "label": "resultat()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "resultat()",
-      "source_file": "utils/data.py",
-      "source_location": "L83"
-    },
-    {
-      "id": "utils_data_unpickle_blaah",
-      "label": "unpickle_blaah()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "unpickle_blaah()",
-      "source_file": "utils/data.py",
-      "source_location": "L14"
-    },
-    {
-      "id": "utils_season_affiche",
-      "label": "_affiche()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "_affiche()",
-      "source_file": "utils/season.py",
-      "source_location": "L207"
-    },
-    {
       "id": "utils_season_render_season",
       "label": "render_season()",
       "_callable": true,
@@ -474,19 +150,7 @@
       "file_type": "code",
       "norm_label": "render_season()",
       "source_file": "utils/season.py",
-      "source_location": "L211"
-    },
-    {
-      "id": "utils_season_season_load",
-      "label": ".load()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": ".load()",
-      "source_file": "utils/season.py",
-      "source_location": "L55"
+      "source_location": "L234"
     },
     {
       "id": "dashboard_web_static_plugins_jquery_jquery_min_a",
@@ -5142,7 +4806,7 @@
       "file_type": "code",
       "norm_label": ".bilan()",
       "source_file": "utils/season.py",
-      "source_location": "L75"
+      "source_location": "L78"
     },
     {
       "id": "utils_season_season_chart_distribution",
@@ -5154,7 +4818,7 @@
       "file_type": "code",
       "norm_label": ".chart_distribution()",
       "source_file": "utils/season.py",
-      "source_location": "L180"
+      "source_location": "L203"
     },
     {
       "id": "utils_season_season_chart_moyennes",
@@ -5166,7 +4830,7 @@
       "file_type": "code",
       "norm_label": ".chart_moyennes()",
       "source_file": "utils/season.py",
-      "source_location": "L168"
+      "source_location": "L191"
     },
     {
       "id": "utils_season_season_chart_notes",
@@ -5178,7 +4842,7 @@
       "file_type": "code",
       "norm_label": ".chart_notes()",
       "source_file": "utils/season.py",
-      "source_location": "L145"
+      "source_location": "L168"
     },
     {
       "id": "utils_season_season_chart_scores",
@@ -5190,7 +4854,7 @@
       "file_type": "code",
       "norm_label": ".chart_scores()",
       "source_file": "utils/season.py",
-      "source_location": "L118"
+      "source_location": "L141"
     },
     {
       "id": "utils_season_season_charts",
@@ -5202,7 +4866,7 @@
       "file_type": "code",
       "norm_label": ".charts()",
       "source_file": "utils/season.py",
-      "source_location": "L194"
+      "source_location": "L217"
     },
     {
       "id": "utils_season_season_joueurs",
@@ -5214,7 +4878,7 @@
       "file_type": "code",
       "norm_label": ".joueurs()",
       "source_file": "utils/season.py",
-      "source_location": "L99"
+      "source_location": "L102"
     },
     {
       "id": "utils_season_season_podium",
@@ -5226,7 +4890,7 @@
       "file_type": "code",
       "norm_label": ".podium()",
       "source_file": "utils/season.py",
-      "source_location": "L103"
+      "source_location": "L106"
     },
     {
       "id": "utils_season_season_records",
@@ -5238,7 +4902,7 @@
       "file_type": "code",
       "norm_label": ".records()",
       "source_file": "utils/season.py",
-      "source_location": "L87"
+      "source_location": "L90"
     },
     {
       "id": "utils_season_style",
@@ -5250,7 +4914,7 @@
       "file_type": "code",
       "norm_label": "_style()",
       "source_file": "utils/season.py",
-      "source_location": "L39"
+      "source_location": "L40"
     },
     {
       "id": "dashboard_web_static_plugins_jquery_jquery_slim_expectsync",
@@ -5661,6 +5325,414 @@
       "source_location": "L2"
     },
     {
+      "id": "utils_mots_gagnant_concours",
+      "label": "gagnant_concours()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "gagnant_concours()",
+      "source_file": "utils/mots.py",
+      "source_location": "L35"
+    },
+    {
+      "id": "utils_mots_gimmicks",
+      "label": "gimmicks()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "gimmicks()",
+      "source_file": "utils/mots.py",
+      "source_location": "L53"
+    },
+    {
+      "id": "utils_mots_load_surnoms",
+      "label": "load_surnoms()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "load_surnoms()",
+      "source_file": "utils/mots.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "utils_mots_palmares_concours",
+      "label": "palmares_concours()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "palmares_concours()",
+      "source_file": "utils/mots.py",
+      "source_location": "L48"
+    },
+    {
+      "id": "utils_mots_surnoms",
+      "label": "surnoms()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "surnoms()",
+      "source_file": "utils/mots.py",
+      "source_location": "L68"
+    },
+    {
+      "id": "utils_season_season_mots",
+      "label": ".mots()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": ".mots()",
+      "source_file": "utils/season.py",
+      "source_location": "L119"
+    },
+    {
+      "id": "utils_data_notes",
+      "label": "notes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "notes()",
+      "source_file": "utils/data.py",
+      "source_location": "L120"
+    },
+    {
+      "id": "utils_data_notes_extract_notes",
+      "label": "extract_notes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "extract_notes()",
+      "source_file": "utils/data.py",
+      "source_location": "L126"
+    },
+    {
+      "id": "utils_data_resultats",
+      "label": "resultats()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "resultats()",
+      "source_file": "utils/data.py",
+      "source_location": "L112"
+    },
+    {
+      "id": "utils_data_resultats_96a35e",
+      "label": "_resultats()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "_resultats()",
+      "source_file": "utils/data.py",
+      "source_location": "L22"
+    },
+    {
+      "id": "utils_data_resultats_96a35e_extract_adversaire",
+      "label": "extract_adversaire()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "extract_adversaire()",
+      "source_file": "utils/data.py",
+      "source_location": "L36"
+    },
+    {
+      "id": "utils_data_resultats_96a35e_extract_buts",
+      "label": "extract_buts()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "extract_buts()",
+      "source_file": "utils/data.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "utils_data_resultats_96a35e_extract_buts_apres_equipes",
+      "label": "apres_equipes()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "apres_equipes()",
+      "source_file": "utils/data.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "utils_data_resultats_96a35e_resultat",
+      "label": "resultat()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "resultat()",
+      "source_file": "utils/data.py",
+      "source_location": "L83"
+    },
+    {
+      "id": "utils_data_unpickle_blaah",
+      "label": "unpickle_blaah()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "unpickle_blaah()",
+      "source_file": "utils/data.py",
+      "source_location": "L14"
+    },
+    {
+      "id": "utils_season_affiche",
+      "label": "_affiche()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "_affiche()",
+      "source_file": "utils/season.py",
+      "source_location": "L230"
+    },
+    {
+      "id": "utils_season_season_load",
+      "label": ".load()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": ".load()",
+      "source_file": "utils/season.py",
+      "source_location": "L58"
+    },
+    {
+      "id": "utils_articles_date_to_season",
+      "label": "date_to_season()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "date_to_season()",
+      "source_file": "utils/articles.py",
+      "source_location": "L18"
+    },
+    {
+      "id": "utils_articles_iter_articles",
+      "label": "iter_articles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "iter_articles()",
+      "source_file": "utils/articles.py",
+      "source_location": "L38"
+    },
+    {
+      "id": "utils_articles_known_urls",
+      "label": "known_urls()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "known_urls()",
+      "source_file": "utils/articles.py",
+      "source_location": "L46"
+    },
+    {
+      "id": "utils_articles_load_articles",
+      "label": "load_articles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "load_articles()",
+      "source_file": "utils/articles.py",
+      "source_location": "L73"
+    },
+    {
+      "id": "utils_articles_season_file",
+      "label": "season_file()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "season_file()",
+      "source_file": "utils/articles.py",
+      "source_location": "L25"
+    },
+    {
+      "id": "utils_articles_write_articles",
+      "label": "write_articles()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "write_articles()",
+      "source_file": "utils/articles.py",
+      "source_location": "L50"
+    },
+    {
+      "id": "data_creation_main",
+      "label": "main()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "data.py",
+      "file_type": "code",
+      "norm_label": "main()",
+      "source_file": "data_creation.py",
+      "source_location": "L12"
+    },
+    {
+      "id": "dashboard_web_utils_utils_get_by_country",
+      "label": "get_by_country()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "get_by_country()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L173"
+    },
+    {
+      "id": "dashboard_web_utils_utils_get_by_country_merged",
+      "label": "get_by_country_merged()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "get_by_country_merged()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L187"
+    },
+    {
+      "id": "dashboard_web_utils_utils_get_per_country_data",
+      "label": "get_per_country_data()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "get_per_country_data()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L204"
+    },
+    {
+      "id": "dashboard_web_utils_utils_load_chartjs_map_data",
+      "label": "load_chartjs_map_data()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "load_chartjs_map_data()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L8"
+    },
+    {
+      "id": "dashboard_web_utils_utils_load_data",
+      "label": "load_data()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "load_data()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L22"
+    },
+    {
+      "id": "dashboard_web_utils_utils_merge_data",
+      "label": "merge_data()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "merge_data()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L131"
+    },
+    {
+      "id": "dashboard_web_utils_utils_preprocessed_data",
+      "label": "preprocessed_data()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "preprocessed_data()",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L49"
+    },
+    {
+      "id": "scraper_canebiere_pipelines_writeitempipeline_close_spider",
+      "label": ".close_spider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "WriteItemPipeline",
+      "file_type": "code",
+      "norm_label": ".close_spider()",
+      "source_file": "scraper/canebiere/pipelines.py",
+      "source_location": "L16"
+    },
+    {
+      "id": "scraper_canebiere_pipelines_writeitempipeline_open_spider",
+      "label": ".open_spider()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "WriteItemPipeline",
+      "file_type": "code",
+      "norm_label": ".open_spider()",
+      "source_file": "scraper/canebiere/pipelines.py",
+      "source_location": "L13"
+    },
+    {
+      "id": "scraper_canebiere_pipelines_writeitempipeline_process_item",
+      "label": ".process_item()",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "WriteItemPipeline",
+      "file_type": "code",
+      "norm_label": ".process_item()",
+      "source_file": "scraper/canebiere/pipelines.py",
+      "source_location": "L24"
+    },
+    {
       "id": "dashboard_web_static_plugins_jquery_jquery_min_be",
       "label": "be()",
       "_callable": true,
@@ -5968,138 +6040,6 @@
       "source_location": ""
     },
     {
-      "id": "dashboard_web_utils_utils",
-      "label": "utils.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "utils.py",
-      "source_file": "dashboard/web/utils/utils.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "data_creation",
-      "label": "data_creation.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "data_creation.py",
-      "source_file": "data_creation.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "datetime",
-      "label": "datetime",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "datetime",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "object",
-      "label": "object",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "object",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "scraper_canebiere_pipelines",
-      "label": "pipelines.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "pipelines.py",
-      "source_file": "scraper/canebiere/pipelines.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "series",
-      "label": "Series",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "series",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "utils_articles",
-      "label": "articles.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "articles.py",
-      "source_file": "utils/articles.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "utils_articles_py_dataframe",
-      "label": "DataFrame",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "dataframe",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "utils_articles_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "utils_data",
-      "label": "data.py",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "data.py",
-      "source_file": "utils/data.py",
-      "source_location": "L1"
-    },
-    {
-      "id": "utils_data_py_dataframe",
-      "label": "DataFrame",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "dataframe",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "utils_data_py_path",
-      "label": "Path",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "code",
-      "norm_label": "path",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
       "id": "utils_season",
       "label": "season.py",
       "_origin": "ast",
@@ -6133,17 +6073,6 @@
       "source_location": "L1"
     },
     {
-      "id": "scraper_canebiere_pipelines_rationale_11",
-      "label": "Accumule les acad\u00e9mies et les range dans data/articles/<saison>.jsonl \u00e0 la fin\u2026",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "rationale",
-      "norm_label": "accumule les academies et les range dans data/articles/<saison>.jsonl a la fin...",
-      "source_file": "scraper/canebiere/pipelines.py",
-      "source_location": "L11"
-    },
-    {
       "id": "utils_articles_rationale_30",
       "label": "Les saisons qui ont droit \u00e0 leur page, de la plus ancienne \u00e0 la plus r\u00e9cente.",
       "_origin": "ast",
@@ -6153,17 +6082,6 @@
       "norm_label": "les saisons qui ont droit a leur page, de la plus ancienne a la plus recente.",
       "source_file": "utils/articles.py",
       "source_location": "L30"
-    },
-    {
-      "id": "utils_articles_rationale_51",
-      "label": "Merge articles into the per-season files: dedup by url, sorted by date.",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "season.py",
-      "file_type": "rationale",
-      "norm_label": "merge articles into the per-season files: dedup by url, sorted by date.",
-      "source_file": "utils/articles.py",
-      "source_location": "L51"
     },
     {
       "id": "utils_season_rationale_1",
@@ -6598,7 +6516,7 @@
       "source_location": ""
     },
     {
-      "id": "utils_season_rationale_119",
+      "id": "utils_season_rationale_142",
       "label": "Chaque match: les buts de l'OM vers le haut, ceux de l'adversaire vers le bas.",
       "_origin": "ast",
       "community": 4,
@@ -6606,10 +6524,10 @@
       "file_type": "rationale",
       "norm_label": "chaque match: les buts de l'om vers le haut, ceux de l'adversaire vers le bas.",
       "source_file": "utils/season.py",
-      "source_location": "L119"
+      "source_location": "L142"
     },
     {
-      "id": "utils_season_rationale_146",
+      "id": "utils_season_rationale_169",
       "label": "Le carnet de notes: un joueur par ligne, un match par colonne.",
       "_origin": "ast",
       "community": 4,
@@ -6617,7 +6535,7 @@
       "file_type": "rationale",
       "norm_label": "le carnet de notes: un joueur par ligne, un match par colonne.",
       "source_file": "utils/season.py",
-      "source_location": "L146"
+      "source_location": "L169"
     },
     {
       "id": "readme",
@@ -6743,6 +6661,248 @@
       "norm_label": "lit les academies via l'api rest wordpress de horsjeu.net, de la plus recente a...",
       "source_file": "scraper/canebiere/spiders/canebiere_spider.py",
       "source_location": "L15"
+    },
+    {
+      "id": "utils_mots",
+      "label": "mots.py",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "mots.py",
+      "source_file": "utils/mots.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "utils_mots_py_dataframe",
+      "label": "DataFrame",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "dataframe",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "utils_mots_py_series",
+      "label": "Series",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "code",
+      "norm_label": "series",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "utils_mots_rationale_1",
+      "label": "Les mots de la saison: les gimmicks, les surnoms et le concours zoologique.\u2026",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "rationale",
+      "norm_label": "les mots de la saison: les gimmicks, les surnoms et le concours zoologique....",
+      "source_file": "utils/mots.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "utils_mots_rationale_36",
+      "label": "Le lecteur qui remporte le concours zoologique de cette acad\u00e9mie, s'il y en a\u2026",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "rationale",
+      "norm_label": "le lecteur qui remporte le concours zoologique de cette academie, s'il y en a...",
+      "source_file": "utils/mots.py",
+      "source_location": "L36"
+    },
+    {
+      "id": "utils_mots_rationale_54",
+      "label": "Une colonne par gimmick: le nombre d'occurrences dans chaque acad\u00e9mie.",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "rationale",
+      "norm_label": "une colonne par gimmick: le nombre d'occurrences dans chaque academie.",
+      "source_file": "utils/mots.py",
+      "source_location": "L54"
+    },
+    {
+      "id": "utils_mots_rationale_59",
+      "label": "[{\"surnom\": \"Jean-Bite\", \"joueur\": \"Aubameyang\", \"variantes\": [...], \"saisons\":\u2026",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "rationale",
+      "norm_label": "[{\"surnom\": \"jean-bite\", \"joueur\": \"aubameyang\", \"variantes\": [...], \"saisons\":...",
+      "source_file": "utils/mots.py",
+      "source_location": "L59"
+    },
+    {
+      "id": "utils_mots_rationale_69",
+      "label": "Les surnoms employ\u00e9s cette saison, du plus fr\u00e9quent au moins fr\u00e9quent.",
+      "_origin": "ast",
+      "community": 52,
+      "community_name": "mots.py",
+      "file_type": "rationale",
+      "norm_label": "les surnoms employes cette saison, du plus frequent au moins frequent.",
+      "source_file": "utils/mots.py",
+      "source_location": "L69"
+    },
+    {
+      "id": "utils_data_py_dataframe",
+      "label": "DataFrame",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "dataframe",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "utils_data_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "utils_season_py_series",
+      "label": "Series",
+      "_origin": "ast",
+      "community": 53,
+      "community_name": "notes",
+      "file_type": "code",
+      "norm_label": "series",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "datetime",
+      "label": "datetime",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "datetime",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scraper_canebiere_pipelines",
+      "label": "pipelines.py",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "pipelines.py",
+      "source_file": "scraper/canebiere/pipelines.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "utils_articles",
+      "label": "articles.py",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "articles.py",
+      "source_file": "utils/articles.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "utils_articles_py_dataframe",
+      "label": "DataFrame",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "dataframe",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "utils_articles_py_path",
+      "label": "Path",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "code",
+      "norm_label": "path",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "utils_articles_rationale_51",
+      "label": "Merge articles into the per-season files: dedup by url, sorted by date.",
+      "_origin": "ast",
+      "community": 54,
+      "community_name": "articles.py",
+      "file_type": "rationale",
+      "norm_label": "merge articles into the per-season files: dedup by url, sorted by date.",
+      "source_file": "utils/articles.py",
+      "source_location": "L51"
+    },
+    {
+      "id": "data_creation",
+      "label": "data_creation.py",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "data.py",
+      "file_type": "code",
+      "norm_label": "data_creation.py",
+      "source_file": "data_creation.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "utils_data",
+      "label": "data.py",
+      "_origin": "ast",
+      "community": 55,
+      "community_name": "data.py",
+      "file_type": "code",
+      "norm_label": "data.py",
+      "source_file": "utils/data.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "dashboard_web_utils_utils",
+      "label": "utils.py",
+      "_origin": "ast",
+      "community": 56,
+      "community_name": "pandas",
+      "file_type": "code",
+      "norm_label": "utils.py",
+      "source_file": "dashboard/web/utils/utils.py",
+      "source_location": "L1"
+    },
+    {
+      "id": "object",
+      "label": "object",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "WriteItemPipeline",
+      "file_type": "code",
+      "norm_label": "object",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "scraper_canebiere_pipelines_rationale_11",
+      "label": "Accumule les acad\u00e9mies et les range dans data/articles/<saison>.jsonl \u00e0 la fin\u2026",
+      "_origin": "ast",
+      "community": 57,
+      "community_name": "WriteItemPipeline",
+      "file_type": "rationale",
+      "norm_label": "accumule les academies et les range dans data/articles/<saison>.jsonl a la fin...",
+      "source_file": "scraper/canebiere/pipelines.py",
+      "source_location": "L11"
     },
     {
       "id": "dashboard_config",
@@ -6922,17 +7082,6 @@
       "type": "external"
     },
     {
-      "id": "json",
-      "label": "json",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "json",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "nbconvert",
       "label": "nbconvert",
       "community": 0,
@@ -6955,39 +7104,6 @@
       "type": "external"
     },
     {
-      "id": "numpy",
-      "label": "numpy",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "numpy",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "operator",
-      "label": "operator",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "operator",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "pandas",
-      "label": "pandas",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pandas",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "papermill",
       "label": "papermill",
       "community": 0,
@@ -6999,39 +7115,6 @@
       "type": "external"
     },
     {
-      "id": "pathlib",
-      "label": "pathlib",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pathlib",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "pickle",
-      "label": "pickle",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "pickle",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "re",
-      "label": "re",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "re",
-      "source_file": "",
-      "type": "external"
-    },
-    {
       "id": "shutil",
       "label": "shutil",
       "community": 0,
@@ -7039,39 +7122,6 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "shutil",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "spacy",
-      "label": "spacy",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "spacy",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "tqdm",
-      "label": "tqdm",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "tqdm",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "typing",
-      "label": "typing",
-      "community": 0,
-      "community_name": "season.py",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "typing",
       "source_file": "",
       "type": "external"
     },
@@ -7149,6 +7199,127 @@
       "external": true,
       "file_type": "concept",
       "norm_label": "urllib_parse",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "collections",
+      "label": "collections",
+      "community": 52,
+      "community_name": "mots.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "collections",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "json",
+      "label": "json",
+      "community": 52,
+      "community_name": "mots.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "json",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "re",
+      "label": "re",
+      "community": 52,
+      "community_name": "mots.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "re",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "numpy",
+      "label": "numpy",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "numpy",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "operator",
+      "label": "operator",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "operator",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pathlib",
+      "label": "pathlib",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pathlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pickle",
+      "label": "pickle",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pickle",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "spacy",
+      "label": "spacy",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "spacy",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "tqdm",
+      "label": "tqdm",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "tqdm",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "typing",
+      "label": "typing",
+      "community": 55,
+      "community_name": "data.py",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "typing",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "pandas",
+      "label": "pandas",
+      "community": 56,
+      "community_name": "pandas",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "pandas",
       "source_file": "",
       "type": "external"
     },
@@ -11869,6 +12040,54 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots_gimmicks",
+      "target": "pandas",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/mots.py",
+      "source_location": "L55",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_load_surnoms",
+      "target": "json",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/mots.py",
+      "source_location": "L65",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_surnoms",
+      "target": "utils_mots_load_surnoms",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/mots.py",
+      "source_location": "L72",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_surnoms",
+      "target": "re",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/mots.py",
+      "source_location": "L76",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season_render_season",
       "target": "utils_season_season_load",
       "relation": "calls",
@@ -11877,7 +12096,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L215",
+      "source_location": "L238",
       "weight": 1.0
     },
     {
@@ -11889,7 +12108,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L216",
+      "source_location": "L239",
       "weight": 1.0
     },
     {
@@ -11901,7 +12120,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L225",
+      "source_location": "L249",
       "weight": 1.0
     },
     {
@@ -11913,7 +12132,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L226",
+      "source_location": "L250",
       "weight": 1.0
     },
     {
@@ -11925,7 +12144,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L182",
+      "source_location": "L205",
       "weight": 1.0
     },
     {
@@ -11937,7 +12156,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L169",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -11949,7 +12168,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L178",
+      "source_location": "L201",
       "weight": 1.0
     },
     {
@@ -11961,7 +12180,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L149",
+      "source_location": "L172",
       "weight": 1.0
     },
     {
@@ -11973,7 +12192,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L150",
+      "source_location": "L173",
       "weight": 1.0
     },
     {
@@ -11985,7 +12204,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L143",
+      "source_location": "L166",
       "weight": 1.0
     },
     {
@@ -11997,7 +12216,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L197",
+      "source_location": "L220",
       "weight": 1.0
     },
     {
@@ -12009,7 +12228,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L200",
+      "source_location": "L223",
       "weight": 1.0
     },
     {
@@ -12021,7 +12240,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L201",
+      "source_location": "L224",
       "weight": 1.0
     },
     {
@@ -12033,7 +12252,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L202",
+      "source_location": "L225",
       "weight": 1.0
     },
     {
@@ -12045,7 +12264,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L56",
+      "source_location": "L59",
       "weight": 1.0
     },
     {
@@ -12057,7 +12276,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L58",
+      "source_location": "L61",
       "weight": 1.0
     },
     {
@@ -12069,7 +12288,43 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L59",
+      "source_location": "L62",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season_season_mots",
+      "target": "utils_mots_gimmicks",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/season.py",
+      "source_location": "L123",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season_season_mots",
+      "target": "utils_mots_surnoms",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/season.py",
+      "source_location": "L134",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season_season_mots",
+      "target": "utils_mots_palmares_concours",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "utils/season.py",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -12081,7 +12336,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "utils/season.py",
-      "source_location": "L104",
+      "source_location": "L107",
       "weight": 1.0
     },
     {
@@ -13897,6 +14152,42 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots",
+      "target": "pandas",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/mots.py",
+      "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "json",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/mots.py",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "re",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/mots.py",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season",
       "target": "altair",
       "relation": "imports",
@@ -13990,6 +14281,42 @@
       "context": "import",
       "source_file": "utils/season.py",
       "source_location": "L17",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season",
+      "target": "utils_mots_gimmicks",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/season.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season",
+      "target": "utils_mots_palmares_concours",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/season.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season",
+      "target": "utils_mots_surnoms",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/season.py",
+      "source_location": "L18",
       "weight": 1.0
     },
     {
@@ -14353,6 +14680,30 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots",
+      "target": "collections",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/mots.py",
+      "source_location": "L8",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "pathlib",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/mots.py",
+      "source_location": "L9",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season",
       "target": "jinja2",
       "relation": "imports_from",
@@ -14390,6 +14741,18 @@
     },
     {
       "source": "utils_season",
+      "target": "utils_mots",
+      "relation": "imports_from",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "utils/season.py",
+      "source_location": "L18",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season",
       "target": "argparse",
       "relation": "imports_from",
       "_origin": "ast",
@@ -14397,7 +14760,7 @@
       "confidence_score": 1.0,
       "context": "import",
       "source_file": "utils/season.py",
-      "source_location": "L236",
+      "source_location": "L260",
       "weight": 1.0
     },
     {
@@ -14521,15 +14884,39 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots_palmares_concours",
+      "target": "utils_mots_py_series",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "utils/mots.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_surnoms",
+      "target": "utils_mots_py_series",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "parameter_type",
+      "source_file": "utils/mots.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season_affiche",
-      "target": "series",
+      "target": "utils_season_py_series",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "context": "parameter_type",
       "source_file": "utils/season.py",
-      "source_location": "L207",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -14629,6 +15016,18 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots_gimmicks",
+      "target": "utils_mots_py_dataframe",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "return_type",
+      "source_file": "utils/mots.py",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season_render_season",
       "target": "utils_season_py_path",
       "relation": "references",
@@ -14637,7 +15036,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L211",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -14649,7 +15048,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L180",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -14661,7 +15060,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L168",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -14673,7 +15072,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L145",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -14685,7 +15084,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L118",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -14697,7 +15096,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L99",
+      "source_location": "L102",
       "weight": 1.0
     },
     {
@@ -14709,7 +15108,7 @@
       "confidence_score": 1.0,
       "context": "return_type",
       "source_file": "utils/season.py",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -18190,6 +18589,61 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots",
+      "target": "utils_mots_gagnant_concours",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L35",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "utils_mots_palmares_concours",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L48",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "utils_mots_gimmicks",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "utils_mots_load_surnoms",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L58",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots",
+      "target": "utils_mots_surnoms",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L68",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season",
       "target": "utils_season_affiche",
       "relation": "contains",
@@ -18197,7 +18651,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L207",
+      "source_location": "L230",
       "weight": 1.0
     },
     {
@@ -18208,7 +18662,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L211",
+      "source_location": "L234",
       "weight": 1.0
     },
     {
@@ -18219,7 +18673,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L39",
+      "source_location": "L40",
       "weight": 1.0
     },
     {
@@ -18230,7 +18684,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L49",
+      "source_location": "L50",
       "weight": 1.0
     },
     {
@@ -18378,13 +18832,35 @@
     },
     {
       "source": "utils_season_season",
+      "target": "utils_season_season_joueurs",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/season.py",
+      "source_location": "L102",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season_season",
       "target": "utils_season_season_podium",
       "relation": "method",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L103",
+      "source_location": "L106",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season_season",
+      "target": "utils_season_season_mots",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/season.py",
+      "source_location": "L119",
       "weight": 1.0
     },
     {
@@ -18395,7 +18871,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L118",
+      "source_location": "L141",
       "weight": 1.0
     },
     {
@@ -18406,7 +18882,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L145",
+      "source_location": "L168",
       "weight": 1.0
     },
     {
@@ -18417,7 +18893,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L168",
+      "source_location": "L191",
       "weight": 1.0
     },
     {
@@ -18428,7 +18904,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L180",
+      "source_location": "L203",
       "weight": 1.0
     },
     {
@@ -18439,7 +18915,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L194",
+      "source_location": "L217",
       "weight": 1.0
     },
     {
@@ -18450,7 +18926,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L55",
+      "source_location": "L58",
       "weight": 1.0
     },
     {
@@ -18461,7 +18937,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L75",
+      "source_location": "L78",
       "weight": 1.0
     },
     {
@@ -18472,18 +18948,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L87",
-      "weight": 1.0
-    },
-    {
-      "source": "utils_season_season",
-      "target": "utils_season_season_joueurs",
-      "relation": "method",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "utils/season.py",
-      "source_location": "L99",
+      "source_location": "L90",
       "weight": 1.0
     },
     {
@@ -18718,6 +19183,61 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots_rationale_1",
+      "target": "utils_mots",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L1",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_rationale_36",
+      "target": "utils_mots_gagnant_concours",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L36",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_rationale_54",
+      "target": "utils_mots_gimmicks",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L54",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_rationale_59",
+      "target": "utils_mots_load_surnoms",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L59",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_mots_rationale_69",
+      "target": "utils_mots_surnoms",
+      "relation": "rationale_for",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "utils/mots.py",
+      "source_location": "L69",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season_rationale_1",
       "target": "utils_season",
       "relation": "rationale_for",
@@ -18729,25 +19249,25 @@
       "weight": 1.0
     },
     {
-      "source": "utils_season_rationale_119",
+      "source": "utils_season_rationale_142",
       "target": "utils_season_season_chart_scores",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L119",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
-      "source": "utils_season_rationale_146",
+      "source": "utils_season_rationale_169",
       "target": "utils_season_season_chart_notes",
       "relation": "rationale_for",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "utils/season.py",
-      "source_location": "L146",
+      "source_location": "L169",
       "weight": 1.0
     },
     {
@@ -20022,6 +20542,18 @@
       "weight": 1.0
     },
     {
+      "source": "utils_mots_palmares_concours",
+      "target": "utils_mots_gagnant_concours",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "utils/mots.py",
+      "source_location": "L49",
+      "weight": 1.0
+    },
+    {
       "source": "utils_season_season_load",
       "target": "utils_articles_date_to_season",
       "relation": "indirect_call",
@@ -20030,7 +20562,7 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "utils/season.py",
-      "source_location": "L61",
+      "source_location": "L64",
       "weight": 1.0
     },
     {
@@ -20042,7 +20574,19 @@
       "confidence_score": 0.85,
       "context": "argument",
       "source_file": "utils/season.py",
-      "source_location": "L64",
+      "source_location": "L67",
+      "weight": 1.0
+    },
+    {
+      "source": "utils_season_season_mots",
+      "target": "utils_articles_date_to_season",
+      "relation": "indirect_call",
+      "_origin": "ast",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "context": "argument",
+      "source_file": "utils/season.py",
+      "source_location": "L129",
       "weight": 1.0
     },
     {

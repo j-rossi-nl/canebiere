@@ -1,22 +1,22 @@
 # Graph Report - canebiere  (2026-10-29)
 
 ## Corpus Check
-- 35 files · ~318,794 words
+- 37 files · ~319,135 words
 - Verdict: corpus is large enough that graph structure adds value.
-- Unclassified: 59 file(s) not represented in the graph (top: .jsonl 18, .css 14, .map 6)
+- Unclassified: 60 file(s) not represented in the graph (top: .jsonl 18, .css 14, .map 6)
 
 ## Summary
-- 613 nodes · 1152 edges · 58 communities (39 shown, 19 thin omitted)
-- Extraction: 90% EXTRACTED · 10% INFERRED · 0% AMBIGUOUS · INFERRED: 111 edges (avg confidence: 0.85)
+- 620 nodes · 1186 edges · 57 communities (38 shown, 19 thin omitted)
+- Extraction: 91% EXTRACTED · 9% INFERRED · 0% AMBIGUOUS · INFERRED: 111 edges (avg confidence: 0.85)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `448abeb6`
+- Built from commit: `87e9b353`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
 ## Community Hubs (Navigation)
-- season.py
+- build_site.py
 - Ee
 - routes.py
 - parse(url, div)
@@ -37,7 +37,6 @@
 - getReferenceOffsets
 - Animation
 - e
-- bootstrap.min.js
 - domManip
 - l
 - matcherFromTokens
@@ -61,36 +60,36 @@
 - on
 - on
 - Ie
-- mots.py
-- notes
-- articles.py
+- season.py
 - data.py
+- articles.py
+- data_creation.py
 - pandas
 - WriteItemPipeline
 
 ## God Nodes (most connected - your core abstractions)
 1. `getBoundaries()` - 13 edges
 2. `Ee()` - 12 edges
-3. `Season` - 12 edges
-4. `getBoundingClientRect()` - 11 edges
-5. `$e()` - 11 edges
-6. `e()` - 11 edges
-7. `getOffsetRectRelativeToArbitraryNode()` - 10 edges
-8. `Pe()` - 10 edges
-9. `Ze()` - 10 edges
-10. `e()` - 10 edges
+3. `render_index()` - 12 edges
+4. `load_articles()` - 12 edges
+5. `Season` - 12 edges
+6. `getBoundingClientRect()` - 11 edges
+7. `$e()` - 11 edges
+8. `e()` - 11 edges
+9. `notes()` - 11 edges
+10. `getOffsetRectRelativeToArbitraryNode()` - 10 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `main()` --calls--> `load_articles()`  [EXTRACTED]
   data_creation.py → utils/articles.py
+- `main()` --calls--> `render_index()`  [EXTRACTED]
+  build_site.py → utils/accueil.py
 - `main()` --calls--> `season_page_name()`  [EXTRACTED]
   build_site.py → utils/articles.py
 - `main()` --calls--> `season_pages()`  [EXTRACTED]
   build_site.py → utils/articles.py
 - `main()` --calls--> `render_season()`  [EXTRACTED]
   build_site.py → utils/season.py
-- `o()` --indirect_call--> `e()`  [INFERRED]
-  dashboard/web/static/plugins/bootstrap/js/bootstrap.bundle.min.js → dashboard/web/static/plugins/bootstrap/js/bootstrap.min.js
 
 ## Import Cycles
 - None detected.
@@ -98,11 +97,11 @@
 ## Hyperedges (group relationships)
 - **Recent page Vega-Lite chart specs rendered via parse()** — dashboard_web_templates_recent_plot_recent_match_notes, dashboard_web_templates_recent_plot_recent_player_notes, dashboard_web_templates_recent_plot_recent_player_matchs, dashboard_web_templates_recent_plot_all_player_notes, dashboard_web_templates_recent_plot_all_player_means, dashboard_web_templates_recent_parse [EXTRACTED 1.00]
 
-## Communities (58 total, 19 thin omitted)
+## Communities (57 total, 19 thin omitted)
 
-### Community 0 - "season.py"
-Cohesion: 0.18
-Nodes (5): main(), render(), season_page_name(), season_pages(), render_season()
+### Community 0 - "build_site.py"
+Cohesion: 0.20
+Nodes (7): main(), render(), render_index(), season_page_name(), season_pages(), render_season(), templates()
 
 ### Community 1 - "Ee"
 Cohesion: 0.18
@@ -129,8 +128,8 @@ Cohesion: 0.11
 Nodes (8): ke(), mt(), nt(), p(), T(), tt(), V(), X()
 
 ### Community 19 - "bootstrap.bundle.min.js"
-Cohesion: 0.10
-Nodes (38): Be(), ct(), dt(), $e(), et(), Fe(), ft(), Ge() (+30 more)
+Cohesion: 0.08
+Nodes (48): at(), Be(), ct(), dt(), $e(), et(), Fe(), ft() (+40 more)
 
 ### Community 20 - "jquery.js"
 Cohesion: 0.06
@@ -159,10 +158,6 @@ Nodes (14): adoptValue(), ajaxConvert(), ajaxHandleResponses(), Animation(), cam
 ### Community 26 - "e"
 Cohesion: 0.25
 Nodes (9): b(), bt(), mt(), B(), ce(), e(), L(), R() (+1 more)
-
-### Community 27 - "bootstrap.min.js"
-Cohesion: 0.31
-Nodes (10): at(), e(), i(), l(), n(), o(), r(), s() (+2 more)
 
 ### Community 28 - "domManip"
 Cohesion: 0.18
@@ -240,32 +235,32 @@ Nodes (3): Identity(), resolve(), Thrower()
 Cohesion: 0.40
 Nodes (6): Ie(), le(), Re(), ve(), we(), ye()
 
-### Community 52 - "mots.py"
-Cohesion: 0.17
-Nodes (5): gagnant_concours(), gimmicks(), load_surnoms(), palmares_concours(), surnoms()
+### Community 52 - "season.py"
+Cohesion: 0.13
+Nodes (6): gagnant_concours(), gimmicks(), load_surnoms(), palmares_concours(), surnoms(), bilan()
 
-### Community 53 - "notes"
-Cohesion: 0.20
+### Community 53 - "data.py"
+Cohesion: 0.18
 Nodes (6): notes(), resultats(), _resultats(), extract_buts(), unpickle_blaah(), _affiche()
 
 ### Community 54 - "articles.py"
-Cohesion: 0.33
+Cohesion: 0.30
 Nodes (6): date_to_season(), iter_articles(), known_urls(), load_articles(), season_file(), write_articles()
 
 ### Community 56 - "pandas"
-Cohesion: 0.42
+Cohesion: 0.36
 Nodes (6): get_by_country(), get_by_country_merged(), load_chartjs_map_data(), load_data(), merge_data(), preprocessed_data()
 
 ## Knowledge Gaps
 - **8 isolated node(s):** `canebiere`, `context.plot_all_player_means (Les Moyennes)`, `context.plot_all_player_notes`, `context.plot_recent_match_notes (5 derniers matchs)`, `context.plot_recent_player_matchs (Les Joueurs)` (+3 more)
-  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 200 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
+  These have ≤1 connection - possible missing edges or undocumented components. (Counts symbols only; 201 node(s) total have ≤1 connection when file, concept and rationale nodes are included.)
 - **19 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `e()` connect `e` to `Ee`, `t`, `jquery.min.js`, `jquery.slim.min.js`, `jquery.js`, `jquery.slim.js`?**
-  _High betweenness centrality (0.178) - this node is a cross-community bridge._
+  _High betweenness centrality (0.174) - this node is a cross-community bridge._
 - **Are the 4 inferred relationships involving `Ee()` (e.g. with `t()` and `e()`) actually correct?**
   _`Ee()` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **What connects `canebiere`, `context.plot_all_player_means (Les Moyennes)`, `context.plot_all_player_notes` to the rest of the system?**
@@ -273,8 +268,8 @@ _Questions this graph is uniquely positioned to answer:_
 - **Should `jquery.min.js` be split into smaller, more focused modules?**
   _Cohesion score 0.09846153846153846 - nodes in this community are weakly interconnected._
 - **Why does `Pe()` connect `bootstrap.bundle.min.js` to `Ee`, `Ie`?**
-  _High betweenness centrality (0.060) - this node is a cross-community bridge._
+  _High betweenness centrality (0.059) - this node is a cross-community bridge._
 - **Should `jquery.slim.min.js` be split into smaller, more focused modules?**
   _Cohesion score 0.10822510822510822 - nodes in this community are weakly interconnected._
 - **Why does `Re()` connect `Ee` to `jquery.slim.min.js`, `bootstrap.bundle.min.js`?**
-  _High betweenness centrality (0.048) - this node is a cross-community bridge._
+  _High betweenness centrality (0.047) - this node is a cross-community bridge._

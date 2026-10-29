@@ -9,6 +9,7 @@ import papermill
 
 from nbconvert import HTMLExporter
 
+from utils.accueil import render_index
 from utils.articles import season_page_name, season_pages
 from utils.season import render_season
 
@@ -24,7 +25,6 @@ CSS = """<style>
 
 # notebook -> page
 PAGES = {
-    "generate_page.ipynb": "index",
     "generate_academies.ipynb": "academies",
     "generate_notes.ipynb": "notes",
     "generate_opponents.ipynb": "opponents",
@@ -61,6 +61,10 @@ def main():
     for notebook, page in PAGES.items():
         if wanted(page):
             render(ROOT / notebook, page, args.out)
+
+    if wanted("index"):
+        print("accueil -> index.html", flush=True)
+        render_index(args.out)
 
     for season in season_pages():
         page = season_page_name(season)

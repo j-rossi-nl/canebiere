@@ -138,9 +138,9 @@
     "semantic_hash": ""
   },
   "build_site.py": {
-    "mtime": 1793220692.4945238,
-    "seen": 1793220713.6302848,
-    "ast_hash": "f41d1a5a0e1d443fea43a8c3b3ce1166",
+    "mtime": 1793286546.0811925,
+    "seen": 1793286572.4307592,
+    "ast_hash": "3143ae92a76be32abaae2d6d20fbb411",
     "semantic_hash": ""
   },
   "dashboard/web/static/plugins/bootstrap/js/bootstrap.bundle.js": {
@@ -210,9 +210,9 @@
     "semantic_hash": ""
   },
   "README.md": {
-    "mtime": 1793220692.4993892,
-    "seen": 1793220713.6303155,
-    "ast_hash": "9a2f4b45b3691bc48949970d813a3a36",
+    "mtime": 1793286551.3107991,
+    "seen": 1793286572.4307919,
+    "ast_hash": "45e12cf100c525e276c57d35aaeae815",
     "semantic_hash": ""
   },
   "dashboard/web/static/plugins/fontawesome-free/webfonts/fa-brands-400.svg": {
@@ -234,9 +234,9 @@
     "semantic_hash": ""
   },
   "utils/season.py": {
-    "mtime": 1793284614.1241875,
-    "seen": 1793284702.1969652,
-    "ast_hash": "06198b2ca6ecc673fc0df3f68ea6ac75",
+    "mtime": 1793286468.671691,
+    "seen": 1793286572.4307897,
+    "ast_hash": "4a7b29732ded1df469bc8a5afcb65f4c",
     "semantic_hash": ""
   },
   "utils/mots.py": {
@@ -249,6 +249,12 @@
     "mtime": 1793285451.2008393,
     "seen": 1793285467.1268532,
     "ast_hash": "8c9e2a699d31cb150fa84b4729adcac1",
+    "semantic_hash": ""
+  },
+  "utils/accueil.py": {
+    "mtime": 1793286468.705814,
+    "seen": 1793286572.4307852,
+    "ast_hash": "03fa4ec989b7d613fc4cabe772821a93",
     "semantic_hash": ""
   }
 }
