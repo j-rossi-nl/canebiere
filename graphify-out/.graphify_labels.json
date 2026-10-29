@@ -1,5 +1,5 @@
 {
-  "0": "season.py",
+  "0": "build_site.py",
   "1": "Ee",
   "2": "routes.py",
   "3": "parse(url, div)",
@@ -26,7 +26,6 @@
   "24": "getReferenceOffsets",
   "25": "Animation",
   "26": "e",
-  "27": "bootstrap.min.js",
   "28": "domManip",
   "29": "l",
   "30": "matcherFromTokens",
@@ -51,10 +50,10 @@
   "49": "on",
   "50": "on",
   "51": "Ie",
-  "52": "mots.py",
-  "53": "notes",
+  "52": "season.py",
+  "53": "data.py",
   "54": "articles.py",
-  "55": "data.py",
+  "55": "data_creation.py",
   "56": "pandas",
   "57": "WriteItemPipeline"
 }

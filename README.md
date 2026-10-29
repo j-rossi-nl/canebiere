@@ -10,8 +10,9 @@ publiées sur <https://j-rossi-nl.github.io/canebiere/>.
    Les articles sont stockés dans `data/articles/<saison>.jsonl` (versionnés dans git).
 2. **Préparation** (`data_creation.py`): passe les textes dans spaCy et écrit `canebiere.pickle` (non versionné).
 3. **Site** (`generate_website.sh`): exécute les notebooks et écrit les pages HTML dans `site/`.
-   Les pages de saison ne passent pas par un notebook: `utils/season.py` calcule les chiffres et les graphes
-   Altair, le gabarit Jinja `templates/season.html.j2` fait la mise en page (`uv run python -m utils.season 2025-2026`).
+   L'accueil et les pages de saison ne passent pas par un notebook: `utils/accueil.py` et `utils/season.py`
+   calculent les chiffres et les graphes Altair, les gabarits Jinja de `templates/` (qui partagent `base.html.j2`)
+   font la mise en page (`uv run python -m utils.accueil`, `uv run python -m utils.season 2025-2026`).
 
 Le workflow GitHub Actions `update.yml` enchaîne les trois étapes chaque jour, commite les nouvelles
 académies sur `main` et publie `site/` sur GitHub Pages.

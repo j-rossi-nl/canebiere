@@ -1,0 +1,92 @@
+{% extends "base.html.j2" %}
+
+{% block style %}
+    /* la dernière académie */
+    .derniere { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; border-left: 6px solid var(--bleu); }
+    .derniere h3 { margin: 0; font-size: 15px; color: var(--doux); }
+    .derniere a { font-weight: 600; }
+    .derniere .jour { color: var(--doux); font-size: 14px; }
+
+    /* une carte par saison */
+    .saisons { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+    .saison { display: flex; flex-direction: column; color: inherit; text-decoration: none; transition: transform .12s, box-shadow .12s; }
+    .saison:hover, .saison:focus-visible { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(11, 35, 65, .12); }
+    .saison h3 { margin: 0; font-size: 28px; color: var(--marine); display: flex; align-items: center; gap: 10px; }
+    .saison .en-cours { font: 600 12px "Source Sans 3", sans-serif; text-transform: none; letter-spacing: 0; background: var(--bleu); color: white; padding: 2px 8px; border-radius: 10px; }
+    .saison .chiffres { display: flex; gap: 14px; margin: 6px 0 10px; font-size: 15px; }
+    .saison .chiffres b { font: 700 20px Oswald, sans-serif; }
+    .saison .v b { color: var(--bleu-fonce); } .saison .n b { color: #8C7B62; } .saison .d b { color: var(--rouge); }
+    .saison .buts { color: var(--doux); font-size: 14px; }
+    .points { display: flex; flex-wrap: wrap; gap: 3px; }
+    .points span { width: 10px; height: 10px; border-radius: 50%; }
+    .points .Victoire { background: var(--bleu); } .points .Nul { background: var(--sable); } .points .Défaite { background: var(--rouge); }
+    .saison .lire { margin-top: auto; padding-top: 12px; color: var(--bleu-fonce); font-weight: 600; font-size: 14px; }
+
+    /* les autres pages */
+    .autres { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .autres a { display: block; color: inherit; text-decoration: none; border-top: 4px solid var(--marine); }
+    .autres a:hover, .autres a:focus-visible { border-top-color: var(--bleu); }
+    .autres h3 { margin: 0 0 4px; font-size: 18px; }
+    .autres p { margin: 0; color: var(--doux); font-size: 14px; }
+{% endblock %}
+
+{% block nav %}
+      <a href="#saisons">Les saisons</a>
+      <a href="#autres">Toutes saisons confondues</a>
+{% endblock %}
+
+{% block hero %}
+      <h1>Les statistiques<span class="etoile">★</span></h1>
+{% endblock %}
+
+{% block content %}
+    <div class="bilan">
+      <div class="tuile"><div class="valeur">{{ total.academies }}</div><div class="label">académies depuis {{ total.depuis }}</div></div>
+      <div class="tuile victoire"><div class="valeur">{{ total.victoires }}</div><div class="label">victoires</div></div>
+      <div class="tuile nul"><div class="valeur">{{ total.nuls }}</div><div class="label">nuls</div></div>
+      <div class="tuile defaite"><div class="valeur">{{ total.defaites }}</div><div class="label">défaites</div></div>
+      <div class="tuile"><div class="valeur">{{ total.notes }}</div><div class="label">notes distribuées</div></div>
+    </div>
+
+    <section>
+      <div class="carte derniere">
+        <h3>La dernière académie</h3>
+        <a href="{{ derniere.url }}" target="_blank" rel="noopener">{{ derniere.Titre }}</a>
+        <span class="jour">{{ derniere.Jour }}</span>
+      </div>
+    </section>
+
+    <section id="saisons">
+      <h2>Les saisons</h2>
+      <p class="legende">Un point par match: bleu ciel la victoire, sable le nul, rouge la défaite.</p>
+      <div class="saisons">
+        {% for s in saisons %}
+        <a class="carte saison" href="{{ s.page }}.html">
+          <h3>{{ s.season }}{% if s.en_cours %}<span class="en-cours">en cours</span>{% endif %}</h3>
+          {% if s.bilan.matchs %}
+          <div class="chiffres">
+            <span class="v"><b>{{ s.bilan.victoires }}</b> V</span>
+            <span class="n"><b>{{ s.bilan.nuls }}</b> N</span>
+            <span class="d"><b>{{ s.bilan.defaites }}</b> D</span>
+            <span class="buts">{{ s.bilan.buts_pour }}–{{ s.bilan.buts_contre }} buts</span>
+          </div>
+          <div class="points" aria-hidden="true">{% for r in s.serie %}<span class="{{ r }}"></span>{% endfor %}</div>
+          {% else %}
+          <div class="chiffres buts">Pas encore d'académie. Blaah rumine.</div>
+          {% endif %}
+          <div class="lire">Voir la saison →</div>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="autres">
+      <h2>Toutes saisons confondues</h2>
+      <p class="legende">Les autres pages, sur toutes les académies.</p>
+      <div class="autres">
+        {% for page, titre, texte in autres %}
+        <a class="carte" href="{{ page }}.html"><h3>{{ titre }}</h3><p>{{ texte }}</p></a>
+        {% endfor %}
+      </div>
+    </section>
+{% endblock %}

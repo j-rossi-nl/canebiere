@@ -46,6 +46,24 @@ def _style(chart: alt.TopLevelMixin) -> alt.TopLevelMixin:
     )
 
 
+def bilan(m: pd.DataFrame) -> dict:
+    counts = m["Résultat"].value_counts()
+    return {
+        "matchs": len(m),
+        "victoires": int(counts.get("Victoire", 0)),
+        "nuls": int(counts.get("Nul", 0)),
+        "defaites": int(counts.get("Défaite", 0)),
+        "buts_pour": int(m["Buts_OM"].sum()),
+        "buts_contre": int(m["Buts_Adversaire"].sum()),
+    }
+
+
+def templates() -> Environment:
+    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape())
+    env.filters["note"] = lambda x: f"{x:.2f}".replace(".", ",")
+    return env
+
+
 @dataclass
 class Season:
     season: str
@@ -76,16 +94,7 @@ class Season:
     # -- les chiffres -----------------------------------------------------
 
     def bilan(self) -> dict:
-        m = self.matchs
-        counts = m["Résultat"].value_counts()
-        return {
-            "matchs": len(m),
-            "victoires": int(counts.get("Victoire", 0)),
-            "nuls": int(counts.get("Nul", 0)),
-            "defaites": int(counts.get("Défaite", 0)),
-            "buts_pour": int(m["Buts_OM"].sum()),
-            "buts_contre": int(m["Buts_Adversaire"].sum()),
-        }
+        return bilan(self.matchs)
 
     def records(self) -> dict:
         m = self.matchs
@@ -232,9 +241,7 @@ def _affiche(row: pd.Series) -> str:
 
 
 def render_season(season: str, out_dir: Path) -> Path:
-    env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape())
-    env.filters["note"] = lambda x: f"{x:.2f}".replace(".", ",")
-
+    env = templates()
     s = Season.load(season)
     seasons = season_pages()
     i = seasons.index(season)
