@@ -149,7 +149,34 @@
     .vega-embed { width: 100%; }
     .vega-embed summary { display: none; }
     .deux { display: grid; grid-template-columns: 3fr 2fr; gap: 16px; }
+    /* les deux cartes à la même hauteur: la distribution remplit la colonne */
+    .deux > div, .deux .carte { display: flex; flex-direction: column; }
+    .deux .carte { flex: 1; }
+    .deux .graphe { flex: 1; min-height: 220px; }
+    .deux .vega-embed { height: 100%; }
     @media (max-width: 760px) { .deux { grid-template-columns: 1fr; } }
+
+    /* les mots de la saison */
+    .compteurs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .compteurs .tuile { margin: 0; }
+    .compteurs .label { color: var(--texte); font-weight: 600; font-size: 15px; }
+    .compteurs .detail { color: var(--doux); font-size: 13px; margin-top: 4px; }
+    .compteurs .tuile.honte { border-color: var(--rouge); }
+    .compteurs .tuile.slip { border-color: var(--or); }
+    .compteurs .tuile.raie { border-color: var(--bleu); }
+    .frissons { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 10px 4px; margin-top: 16px; }
+    .frissons a { display: flex; flex-direction: column-reverse; align-items: center; width: 30px; text-decoration: none; font-size: 16px; line-height: 1.1; }
+    .frissons .macaron { display: grid; place-items: center; width: 24px; height: 24px; margin-top: 4px; border-radius: 50%; font: 700 11px Oswald, sans-serif; color: white; }
+    .frissons .Victoire { background: var(--bleu); } .frissons .Nul { background: var(--sable); color: var(--marine); } .frissons .Défaite { background: var(--rouge); }
+    .frissons a:hover .macaron, .frissons a:focus-visible .macaron { transform: scale(1.2); }
+    .surnoms { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-top: 16px; }
+    .surnoms .nom { font: 700 22px/1.2 Oswald, sans-serif; }
+    .surnoms .detail { color: var(--doux); font-size: 14px; }
+    .concours { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 16px; }
+    .concours h3 { margin: 0 0 8px; font-size: 15px; color: var(--doux); }
+    .concours ol { margin: 0; padding-left: 22px; }
+    .concours li { padding: 2px 0; }
+    .concours li span { float: right; color: var(--doux); font-variant-numeric: tabular-nums; }
 
     /* la liste des académies */
     table { width: 100%; border-collapse: collapse; font-size: 15px; }
@@ -172,7 +199,7 @@
       <a href="index.html">← Toutes les saisons</a>
       {% if precedente %}<a href="{{ precedente[1] }}.html">‹ {{ precedente[0] }}</a>{% endif %}
       {% if suivante %}<a href="{{ suivante[1] }}.html">{{ suivante[0] }} ›</a>{% endif %}
-      <a class="academie" href="{{ academie_url }}">Lire La Canebière Académie ↗</a>
+      <a class="academie" href="{{ academie_url }}" target="_blank" rel="noopener">Lire La Canebière Académie ↗</a>
     </div>
   </nav>
 
@@ -203,7 +230,7 @@
       <p class="legende">Un macaron par match, dans l'ordre. Cliquer dessus pour lire l'académie.</p>
       <div class="carte serie">
         {% for m in matchs %}
-        <a class="{{ m['Résultat'] }}" href="{{ m.url }}" title="{{ m.Jour }} · {{ m.Match }} {{ m.Buts_R }}-{{ m.Buts_V }} · La Canebière Académie {{ m.Sous_titre }}">{{ m['Résultat'][0] }}</a>
+        <a class="{{ m['Résultat'] }}" href="{{ m.url }}" target="_blank" rel="noopener" title="{{ m.Jour }} · {{ m.Match }} {{ m.Buts_R }}-{{ m.Buts_V }} · La Canebière Académie {{ m.Sous_titre }}">{{ m['Résultat'][0] }}</a>
         {% endfor %}
       </div>
     </section>
@@ -216,7 +243,7 @@
         <div class="carte record belle">
           <h3>La plus belle</h3>
           <div class="score">{{ v.Match }} {{ v.Buts_R }}-{{ v.Buts_V }}<small>{{ v.Jour }}</small></div>
-          <a href="{{ v.url }}">La Canebière Académie {{ v.Sous_titre }}</a>
+          <a href="{{ v.url }}" target="_blank" rel="noopener">La Canebière Académie {{ v.Sous_titre }}</a>
         </div>
         {% endif %}
         {% if records.defaite %}{% set d = records.defaite %}
@@ -224,7 +251,7 @@
           <div class="texte">
             <h3>La pire</h3>
             <div class="score">{{ d.Match }} {{ d.Buts_R }}-{{ d.Buts_V }}<small>{{ d.Jour }}</small></div>
-            <a href="{{ d.url }}">La Canebière Académie {{ d.Sous_titre }}</a>
+            <a href="{{ d.url }}" target="_blank" rel="noopener">La Canebière Académie {{ d.Sous_titre }}</a>
           </div>
           <div class="lapin" tabindex="0" aria-label="Mr Lapin a un message pour {{ d.Adversaire }}">
             <span class="indice">Mr Lapin a un message ↓</span>
@@ -272,6 +299,66 @@
     </section>
     {% endif %}
 
+    {% if mots %}
+    {% set gimmicks = {
+      "honte": ("Greenwood (honte à nous)", "fois"),
+      "slip": ("mentions du slipomètre", "mentions"),
+      "raie": ("RAIE", "parades"),
+    } %}
+    <section>
+      <h2>Les mots de la saison</h2>
+      <p class="legende">Ce que Blaah répète, académie après académie.</p>
+      {% if mots.compteurs %}
+      <div class="compteurs">
+        {% for nom, c in mots.compteurs.items() %}
+        <div class="tuile {{ nom }}">
+          <div class="valeur">{{ c.total }}</div>
+          <div class="label">{{ gimmicks[nom][0] }}</div>
+          <div class="detail">Record: {{ c.record }} {{ gimmicks[nom][1] if c.record > 1 else gimmicks[nom][1][:-1] }} dans <a href="{{ c.match.url }}" target="_blank" rel="noopener">{{ c.match.Match }} {{ c.match.Score }}</a></div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if mots.compteurs.slip or mots.compteurs.raie %}
+      <div class="carte" style="margin-top: 16px">
+        <h3 style="margin: 0; font-size: 16px; color: var(--doux)">Le slipomètre</h3>
+        <p class="legende" style="margin: 2px 0 0; color: var(--doux)">🩲 une mention du slipomètre, 🧤 une RAIE, match après match.</p>
+        <div class="frissons">
+          {% for f in mots.frissons %}
+          <a href="{{ f.url }}" target="_blank" rel="noopener" title="{{ f.Jour }} · {{ f.Match }} {{ f.Score }} · {{ f.slip }} slipomètre, {{ f.raie }} RAIE">
+            <span class="macaron {{ f['Résultat'] }}">{{ f.Numero }}</span>
+            {% for _ in range(f.raie) %}<span>🧤</span>{% endfor %}
+            {% for _ in range(f.slip) %}<span>🩲</span>{% endfor %}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      {% if mots.surnoms %}
+      <div class="surnoms">
+        {% for s in mots.surnoms %}
+        <div class="carte"><div class="nom">{{ s.Surnom }}</div><div class="detail">alias {{ s.Joueur }}, {{ s.Fois }} fois</div>{% if s.Note %}<div class="detail"><em>{{ s.Note }}</em></div>{% endif %}</div>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+      {% if mots.concours %}
+      <div class="concours">
+        <div class="carte">
+          <h3>Le concours zoologique, cette saison</h3>
+          <ol>{% for l in mots.concours %}<li>{{ l.Lecteur }} <span>{{ l.Victoires }}</span></li>{% endfor %}</ol>
+        </div>
+        <div class="carte">
+          <h3>Le concours zoologique, depuis toujours</h3>
+          <ol>{% for l in mots.concours_toujours %}<li>{{ l.Lecteur }} <span>{{ l.Victoires }}</span></li>{% endfor %}</ol>
+        </div>
+      </div>
+      {% endif %}
+    </section>
+    {% endif %}
+
     <section>
       <h2>Les académies</h2>
       <div class="carte tableau">
@@ -283,7 +370,7 @@
               <td>{{ m.Jour }}</td>
               <td><span class="pastille {{ m['Résultat'] }}"></span>{{ m.Match }}</td>
               <td class="score">{{ m.Buts_R }}-{{ m.Buts_V }}</td>
-              <td class="cache-mobile"><a href="{{ m.url }}">{{ m.Sous_titre }}</a></td>
+              <td class="cache-mobile"><a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.Sous_titre }}</a></td>
             </tr>
           {% endfor %}
           </tbody>
@@ -296,7 +383,7 @@
   <footer>
     <div class="wrap">
       <div class="blaah">🐪 Blaah !</div>
-      <p>Toutes les académies sont sur <a href="{{ academie_url }}">horsjeu.net</a>. Les images du chameau et de Mr Lapin viennent de là-bas aussi.
+      <p>Toutes les académies sont sur <a href="{{ academie_url }}" target="_blank" rel="noopener">horsjeu.net</a>. Les images du chameau et de Mr Lapin viennent de là-bas aussi.
         <br><a href="index.html">Retour aux statistiques</a></p>
     </div>
   </footer>
@@ -306,7 +393,7 @@
     const specs = JSON.parse(document.getElementById("specs").textContent);
     for (const [id, spec] of Object.entries(specs)) {
       const el = document.getElementById(id);
-      if (el) vegaEmbed(el, spec, { actions: false, renderer: "svg" });
+      if (el) vegaEmbed(el, spec, { actions: false, renderer: "svg", loader: { target: "_blank" } });
     }
   </script>
 </body>

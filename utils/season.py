@@ -15,6 +15,7 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from utils.articles import date_to_season, load_articles, season_page_name, season_pages
 from utils.data import notes, resultats
+from utils.mots import gimmicks, palmares_concours, surnoms
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -50,25 +51,27 @@ class Season:
     season: str
     matchs: pd.DataFrame
     notes: pd.DataFrame
+    # toutes les académies de Blaah, toutes saisons: pour le palmarès du concours zoologique
+    academies: pd.DataFrame
 
     @classmethod
     def load(cls, season: str) -> "Season":
         articles = load_articles()
         blaah = articles[articles["Auteur"] == "Blaah"]
-        matchs = resultats(blaah)
+        matchs = resultats(blaah).merge(blaah[["url", "full_text"]], on="url")
         notation = notes(blaah)
 
         matchs = matchs[matchs["Date"].map(date_to_season) == season].sort_values("Date").reset_index(drop=True)
         notation = notation[notation["Date"].map(date_to_season) == season]
 
         matchs["Match"] = matchs.apply(_affiche, axis=1)
-        matchs["Score"] = matchs["Buts_OM"].astype(str) + "-" + matchs["Buts_Adversaire"].astype(str)
+        matchs["Score"] = matchs["Buts_R"].astype(str) + "-" + matchs["Buts_V"].astype(str)
         matchs["Ecart"] = matchs["Buts_OM"] - matchs["Buts_Adversaire"]
         # "Rennes-OM (1-0) : La Canebière Académie marque mal" -> "marque mal"
         matchs["Sous_titre"] = matchs["Titre"].str.replace(r"^.*Canebière Académie\s*", "", regex=True)
         matchs["Jour"] = matchs["Date"].dt.strftime("%d/%m/%Y")
         matchs["Numero"] = range(1, len(matchs) + 1)
-        return cls(season, matchs, notation)
+        return cls(season, matchs, notation, blaah)
 
     # -- les chiffres -----------------------------------------------------
 
@@ -113,6 +116,26 @@ class Season:
             "cinq_sur_cinq": int((self.notes["Note_txt"] == "5").sum()),
         }
 
+    def mots(self) -> dict:
+        m = self.matchs
+        if m.empty:
+            return {}
+        g = gimmicks(m)
+        compteurs = {}
+        for nom in g.columns:
+            if g[nom].sum():
+                record = m.loc[g[nom].idxmax()]
+                compteurs[nom] = {"total": int(g[nom].sum()), "record": int(g[nom].max()), "match": record.to_dict()}
+        saison = self.academies[self.academies["Date"].map(date_to_season) == self.season]
+        return {
+            "compteurs": compteurs,
+            # le slipomètre, match par match
+            "frissons": [{"slip": int(g.at[i, "slip"]), "raie": int(g.at[i, "raie"]), **m.loc[i].to_dict()} for i in m.index],
+            "surnoms": surnoms(saison["full_text"], self.season),
+            "concours": palmares_concours(saison["full_text"]),
+            "concours_toujours": palmares_concours(self.academies["full_text"]),
+        }
+
     # -- les graphes ------------------------------------------------------
 
     def chart_scores(self) -> alt.TopLevelMixin:
@@ -126,7 +149,7 @@ class Season:
         )
         tooltip = [
             alt.Tooltip("Match:N", title="Match"),
-            alt.Tooltip("Score:N", title="Score OM"),
+            alt.Tooltip("Score:N"),
             alt.Tooltip("Jour:N", title="Date"),
             alt.Tooltip("Sous_titre:N", title="L'Académie"),
         ]
@@ -144,7 +167,8 @@ class Season:
 
     def chart_notes(self) -> alt.TopLevelMixin:
         """Le carnet de notes: un joueur par ligne, un match par colonne."""
-        n = self.notes.merge(self.matchs[["Date", "Numero", "Match", "Score", "url"]], on="Date")
+        # les notes ont déjà une colonne "Match" (les équipes): on garde celle des matchs
+        n = self.notes.drop(columns="Match").merge(self.matchs[["Date", "Numero", "Match", "Score", "url"]], on="Date")
         ordre = self.joueurs().sort_values("Notes", ascending=False)["Joueur"].tolist()
         return _style(
             alt.Chart(n)
@@ -158,7 +182,7 @@ class Season:
                     alt.Tooltip("Joueur:N"),
                     alt.Tooltip("Note_txt:N", title="Note"),
                     alt.Tooltip("Match:N"),
-                    alt.Tooltip("Score:N", title="Score OM"),
+                    alt.Tooltip("Score:N"),
                 ],
             )
             .properties(width="container", height=alt.Step(16))
@@ -187,7 +211,7 @@ class Season:
                 color=alt.Color("Note_num:Q", scale=NOTES_SCALE, legend=None),
                 tooltip=[alt.Tooltip("Note_txt:N", title="Note"), alt.Tooltip("count():Q", title="Attributions")],
             )
-            .properties(width="container", height=220)
+            .properties(width="container", height="container")
         )
 
     def charts(self) -> dict[str, str]:
@@ -219,6 +243,7 @@ def render_season(season: str, out_dir: Path) -> Path:
         bilan=s.bilan(),
         records=s.records(),
         podium=s.podium(),
+        mots=s.mots(),
         matchs=s.matchs.to_dict("records"),
         # "</" fermerait la balise <script> qui contient les specs
         charts=json.dumps({k: json.loads(v) for k, v in s.charts().items()}, ensure_ascii=False).replace("</", "<\\/"),

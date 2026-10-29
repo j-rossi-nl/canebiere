@@ -1,0 +1,11 @@
+[
+  {"surnom": "Jean-Bite", "joueur": "Aubameyang"},
+  {"surnom": "Géronimo", "variantes": ["Geronimo"], "joueur": "Rulli", "saisons": ["2024-2025", "2025-2026", "2026-2027"]},
+  {"surnom": "Géronimo", "variantes": ["Geronimo"], "joueur": "Germain", "saisons": ["2019-2020"], "note": "comme son illustre homonyme apache"},
+  {"surnom": "Balerdin", "joueur": "Pavard", "note": "quand il défend à la manière de Balerdi"},
+  {"surnom": "Rongieur", "joueur": "Rongier"},
+  {"surnom": "Lamentin Ronflex", "joueur": "Rongier", "note": "le Rongier des mauvais jours"},
+  {"surnom": "Rongetout", "joueur": "Rongier et Veretout", "note": "la paire qui ronge tous les ballons au milieu"},
+  {"surnom": "Rougail Toxique", "joueur": "Payet", "note": "le rougail réunionnais, ennemi de son immense talent"},
+  {"surnom": "Le Duc", "variantes": ["le Duc"], "joueur": "Rabiot"}
+]
