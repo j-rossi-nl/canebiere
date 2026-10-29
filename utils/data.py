@@ -120,7 +120,7 @@ def resultats(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
 def notes(blaah_: pd.DataFrame, to_: Optional[Path] = None) -> pd.DataFrame:
     blaah = _resultats(blaah_)
 
-    notes_re = re.compile(r"^(?P<joueur>[\w\s]+) \(.*,?\w*(?P<note>\d[\+\-]?)/5.*")
+    notes_re = re.compile(r"^(?P<joueur>[\w\s’'-]+) \(.*,?\w*(?P<note>\d[\+\-]?)/5.*")
     note_num = re.compile(r"^(?P<num>\d+)(?P<plus>[\+\-]?)$")
 
     def extract_notes(row: pd.Series) -> pd.DataFrame:
